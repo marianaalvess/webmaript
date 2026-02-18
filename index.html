@@ -14,6 +14,15 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <title>Webmari.pt — Web Design & SEO | Portugal & Europa</title>
+  <!-- Canonical + hreflang for multilingual SEO -->
+  <link rel="canonical" href="https://webmari.pt/" />
+  <link rel="alternate" hreflang="pt" href="https://webmari.pt/" />
+  <link rel="alternate" hreflang="en" href="https://webmari.pt/" />
+  <link rel="alternate" hreflang="es" href="https://webmari.pt/" />
+  <link rel="alternate" hreflang="de" href="https://webmari.pt/" />
+  <link rel="alternate" hreflang="fr" href="https://webmari.pt/" />
+  <link rel="alternate" hreflang="zh" href="https://webmari.pt/" />
+  <link rel="alternate" hreflang="x-default" href="https://webmari.pt/" />
   <link rel="stylesheet" href="./styles.css?v=4" />
   <!-- DNS prefetch for external services -->
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -34,25 +43,228 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet">
   </noscript>
+  <!-- Structured Data: Organization + LocalBusiness -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Webmari.pt",
-      "image": "https://webmari.pt/og-image.jpg",
-      "@id": "https://webmari.pt",
-      "url": "https://webmari.pt",
-      "telephone": "+351925928900",
-      "email": "marianakb345@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "PT"
+  {
+    "@context": "https://schema.org",
+    "@type": ["ProfessionalService", "LocalBusiness"],
+    "@id": "https://webmari.pt/#organization",
+    "name": "Webmari.pt",
+    "alternateName": "Webmari",
+    "description": "Agência de web design e desenvolvimento web em Portugal. Criamos sites profissionais, rápidos e otimizados para SEO com código personalizado.",
+    "url": "https://webmari.pt",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://webmari.pt/logo.png",
+      "width": 180,
+      "height": 40
+    },
+    "image": "https://webmari.pt/og-image.jpg",
+    "telephone": "+351925928900",
+    "email": "marianakb345@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sintra",
+      "addressRegion": "Lisboa",
+      "addressCountry": "PT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 38.8029,
+      "longitude": -9.3817
+    },
+    "areaServed": [
+      { "@type": "Country", "name": "Portugal" },
+      { "@type": "Country", "name": "Spain" },
+      { "@type": "Country", "name": "France" },
+      { "@type": "Country", "name": "Germany" }
+    ],
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Transferência Bancária, MB Way",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços de Web Design",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Criação de Site One-Page",
+            "description": "Landing page moderna e profissional com código personalizado, SEO técnico e design responsivo."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SEO e Performance Web",
+            "description": "Otimização para motores de busca, Core Web Vitals e velocidade de carregamento."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Sites Multilingue",
+            "description": "Desenvolvimento de sites em múltiplos idiomas otimizados para SEO internacional."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Manutenção e Suporte Web",
+            "description": "Pacotes mensais de manutenção, atualizações e suporte técnico."
+          }
+        }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "3",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Etransfers.pt" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Estamos muito satisfeitos com o resultado final! Obrigada pelo profissionalismo, disponibilidade e acompanhamento ao cliente!"
       },
-      "sameAs": [
-        "https://instagram.com/webmari.pt"
-      ],
-      "priceRange": "$$"
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Remodelação.pt" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "A otimização mobile é perfeita, e o suporte para configurar o email profissional foi 5 estrelas."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Miguel Silva" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Sem WordPress, sem lentidão. Notámos diferença imediata no ranking do Google."
+      }
+    ],
+    "sameAs": [
+      "https://instagram.com/webmari.pt"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: WebSite (enables Sitelinks Search Box) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://webmari.pt/#website",
+    "url": "https://webmari.pt",
+    "name": "Webmari.pt — Web Design & SEO | Portugal",
+    "description": "Agência de web design e desenvolvimento web em Portugal. Sites rápidos, seguros e otimizados para SEO.",
+    "inLanguage": ["pt", "en", "es", "de", "fr", "zh"],
+    "publisher": {
+      "@id": "https://webmari.pt/#organization"
     }
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage (shows Q&As directly in Google results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quanto custa criar um site profissional em Portugal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O preço depende da complexidade e das funcionalidades pretendidas. Um site One-Page começa a partir de 350€, enquanto projetos mais completos com SEO avançado e sistema multilingue podem variar entre 600€ e 1500€. Oferecemos sempre orçamento transparente e sem surpresas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual é a diferença entre um site em WordPress e um site em código personalizado?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O WordPress usa templates genéricos que carregam plugins pesados, o que resulta em sites lentos e vulneráveis. O código personalizado (HTML, CSS, JavaScript) é escrito à medida, o que garante velocidade máxima, maior segurança e melhor posicionamento no Google."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto tempo demora a criar um website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Um site One-Page fica pronto em 3 a 7 dias úteis. Projetos mais complexos, com múltiplas páginas ou integrações, podem demorar 2 a 4 semanas. Trabalhamos com prazos definidos e comunicação constante."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O site vai aparecer no Google? Como funciona o SEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Todos os nossos sites são construídos com SEO técnico de base: estrutura semântica, velocidade de carregamento, meta tags, Schema.org e sitemap. Para resultados locais em Portugal ou internacionais, aplicamos estratégias específicas de SEO."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O site fica otimizado para telemóvel (mobile)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutamente. Adotamos uma abordagem Mobile-First: o design é pensado primeiro para ecrãs pequenos e depois adaptado para desktop. Testamos em múltiplos dispositivos para garantir uma experiência perfeita em qualquer ecrã."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso ter o site em vários idiomas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim, somos especialistas em sites multilingue. Desenvolvemos sistemas de tradução rápidos e otimizados para SEO internacional, suportando português, inglês, espanhol, alemão, francês e outras línguas conforme necessário."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O site inclui domínio e alojamento (hosting)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Podemos orientar na escolha e configuração do domínio e hosting, ou gerir tudo por si. Trabalhamos com soluções rápidas e seguras como Netlify, Vercel ou servidores dedicados, conforme o projeto."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Oferecem suporte e manutenção após o lançamento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Temos pacotes de manutenção mensal que incluem atualizações de conteúdo, monitorização de performance, backups e suporte técnico. O seu site estará sempre atualizado e seguro."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona o processo de pagamento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trabalhamos com um modelo simples: 50% no início do projeto para arranque e 50% na entrega final. Aceitamos transferência bancária e MB Way. Emitimos fatura por cada pagamento."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso alterar os textos e imagens do site depois de entregue?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Entregamos o código-fonte completo e podemos adicionar um painel de gestão de conteúdos simples. Também oferecemos um serviço de atualização de conteúdos incluído nos pacotes de manutenção."
+        }
+      }
+    ]
+  }
   </script>
 </head>
 
@@ -356,7 +568,7 @@
           <a class="project" href="https://burguerpt.netlify.app/" target="_blank" rel="noopener noreferrer"
             aria-label="Project 1" style="opacity: 1; transform: none;">
             <div class="project__thumb">
-              <img src="./burguer.png.png?v=2" alt="Projeto Burguer - Landing Page" loading="lazy"
+              <img src="./burguer.png.png?v=2" alt="Projeto Burguer - Landing Page" loading="lazy" decoding="async"
                 style="width: 100%; height: 100%; object-fit: cover;" width="600" height="400" />
             </div>
             <div class="project__meta">
@@ -368,7 +580,8 @@
           <a class="project" href="https://pvcarpt.netlify.app/" target="_blank" rel="noopener noreferrer"
             aria-label="Project 2" style="opacity: 1; transform: none;">
             <div class="project__thumb">
-              <img src="./pvcar.png.png" alt="Projeto PV Car" loading="lazy" width="600" height="400" />
+              <img src="./pvcar.png.png" alt="Projeto PV Car" loading="lazy" decoding="async" width="600"
+                height="400" />
             </div>
             <div class="project__meta">
               <span class="project__tag" data-i18n="portfolio.tag2">Corporate</span>
@@ -378,7 +591,8 @@
           <a class="project" href="https://seguidorexpress.netlify.app/" target="_blank" rel="noopener noreferrer"
             aria-label="Project 3" style="opacity: 1; transform: none;">
             <div class="project__thumb">
-              <img src="./seguidor.png.png" alt="Projeto Seguidor Express" loading="lazy" width="600" height="400" />
+              <img src="./seguidor.png.png" alt="Projeto Seguidor Express" loading="lazy" decoding="async" width="600"
+                height="400" />
             </div>
             <div class="project__meta">
               <span class="project__tag" data-i18n="portfolio.tag3">UI</span>
@@ -388,7 +602,8 @@
           <a class="project" href="https://etransfers.pt/" target="_blank" rel="noopener noreferrer"
             aria-label="Project 4" style="opacity: 1; transform: none;">
             <div class="project__thumb">
-              <img src="./etransferspt.png" alt="Projeto Etransfers" loading="lazy" width="600" height="400" />
+              <img src="./etransferspt.png" alt="Projeto Etransfers" loading="lazy" decoding="async" width="600"
+                height="400" />
             </div>
             <div class="project__meta">
               <span class="project__tag" data-i18n="portfolio.tag4">SEO</span>
@@ -398,7 +613,8 @@
           <a class="project" href="https://remodelacao.pt/?lang=pt" target="_blank" rel="noopener noreferrer"
             aria-label="Project 5" style="opacity: 1; transform: none;">
             <div class="project__thumb">
-              <img src="./remodelacao.png.png" alt="Projeto Remodelação" loading="lazy" width="600" height="400" />
+              <img src="./remodelacao.png.png" alt="Projeto Remodelação" loading="lazy" decoding="async" width="600"
+                height="400" />
             </div>
             <div class="project__meta">
               <span class="project__tag" data-i18n="portfolio.tag5">Mobile</span>
@@ -408,7 +624,8 @@
           <a class="project" href="https://imobiliariapt.netlify.app/" target="_blank" rel="noopener noreferrer"
             aria-label="Project 6" style="opacity: 1; transform: none;">
             <div class="project__thumb">
-              <img src="./imobiliaria.png.png" alt="Projeto Imobiliária" loading="lazy" width="600" height="400" />
+              <img src="./imobiliaria.png.png" alt="Projeto Imobiliária" loading="lazy" decoding="async" width="600"
+                height="400" />
             </div>
             <div class="project__meta">
               <span class="project__tag" data-i18n="portfolio.tag6">One-page</span>
@@ -643,16 +860,11 @@
     </div>
 
     <!-- bottom bar -->
-    <div class="container footer__bottom">
+    <div class="container footer__bottom" style="justify-content: center; text-align: center;">
       <p class="footer__copy">
         <span aria-hidden="true">©</span> <span data-year></span> Webmari.pt.
         <span data-i18n="footer.rights">Todos os direitos reservados.</span>
       </p>
-
-      <div class="footer__legal" aria-label="Legal">
-        <a href="#" data-i18n="footer.privacy">Política de Privacidade</a>
-        <a href="#" data-i18n="footer.terms">Termos de Serviço</a>
-      </div>
     </div>
   </footer>
 
