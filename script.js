@@ -2600,7 +2600,11 @@
 
         if (lightSrc && darkSrc) {
           const newSrc = theme === "light" ? lightSrc : darkSrc;
-          if (img.src !== newSrc) img.src = newSrc;
+          // Fix: compare attribute to attribute to handle relative paths correctly
+          // img.src returns absolute URL, newSrc is relative "./..."
+          if (img.getAttribute("src") !== newSrc) {
+            img.setAttribute("src", newSrc);
+          }
         }
       });
     };
