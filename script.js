@@ -1148,42 +1148,51 @@
     $$("img.brand__logo").forEach((img) => {
       const desktopLight = img.getAttribute("data-logo-light");
       const desktopDark = img.getAttribute("data-logo-dark");
-
       const mobileLight = img.getAttribute("data-logo-mobile-light");
       const mobileDark = img.getAttribute("data-logo-mobile-dark");
 
-      // Logic:
-      // If Mobile: 
-      //   - Dark Theme -> uses "claro" (light logo) because background is dark
-      //   - Light Theme -> uses "escuro" (dark logo) because background is light
-
       let nextSrc = "";
-
       if (isMobile && mobileLight && mobileDark) {
-        // Mobile Override
         nextSrc = theme === "dark" ? (mobileLight || desktopLight) : (mobileDark || desktopDark);
       } else {
-        // Desktop fallback
         nextSrc = theme === "dark" ? (desktopDark || desktopLight) : (desktopLight || desktopDark);
       }
 
       if (nextSrc && img.getAttribute("src") !== nextSrc) {
-        img.setAttribute("src", nextSrc);
+        // Fade out → swap src → fade in to avoid flash
+        img.style.transition = "opacity 0.15s ease";
+        img.style.opacity = "0";
+        setTimeout(() => {
+          img.setAttribute("src", nextSrc);
+          img.style.opacity = "1";
+        }, 150);
       }
     });
   };
 
   // Theme
   const applyTheme = (theme) => {
+    // Suppress all CSS transitions briefly to avoid color flash
+    const style = document.createElement("style");
+    style.id = "no-transition-override";
+    style.textContent = "*, *::before, *::after { transition: none !important; }";
+    document.head.appendChild(style);
+
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem(STORAGE.theme, theme);
 
-    // NEW: keep switch state in sync
     const t = $("[data-theme-toggle]");
     if (t) t.setAttribute("aria-checked", theme === "dark" ? "true" : "false");
 
-    // NEW: swap logo when theme changes
-    applyBrandLogoForTheme(theme);
+    // Re-enable transitions after one paint
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const el = document.getElementById("no-transition-override");
+        if (el) el.remove();
+        // Swap logo after transitions are re-enabled
+        applyBrandLogoForTheme(theme);
+      });
+    });
   };
 
   // Listen for resize to update logo if needed
