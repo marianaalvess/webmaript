@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
 
@@ -992,10 +992,27 @@ html[data-theme="dark"] .project__tag {
 
 /* === CONTACT SECTION IMPROVEMENTS === */
 .contact {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 2rem;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+  max-width: var(--container);
+  /* Match site max-width (1180px) */
+  width: 100%;
+  margin-inline: auto;
+}
+
+/* Specific center alignment for contact section title */
+#contacto .section__head {
+  text-align: center;
+  align-items: center;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+#contacto .section__head .eyebrow {
+  margin-inline: auto;
 }
 
 .info-card {
@@ -1013,9 +1030,22 @@ html[data-theme="dark"] .project__tag {
 
 .contact-buttons {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin-top: 2rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .contact-buttons {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-buttons {
+    grid-template-columns: 1fr;
+  }
 }
 
 .contact-btn {
@@ -1023,22 +1053,22 @@ html[data-theme="dark"] .project__tag {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  padding: 1.5rem 1rem;
+  gap: 1.25rem;
+  padding: 3.5rem 2rem;
 
   background: color-mix(in srgb, var(--card) 60%, transparent);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 24px;
   color: var(--text);
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 700;
+  font-size: 1.25rem;
 
   transition: all 0.25s var(--ease);
 }
 
 .contact-btn svg {
-  width: 28px;
-  height: 28px;
+  width: 48px;
+  height: 48px;
   fill: currentColor;
   /* for paths that fill */
   stroke: currentColor;
@@ -1416,7 +1446,7 @@ html[data-theme="light"] .footer {
     animation-delay: 90ms;
   }
 
-  body[data-loaded="true"] #top.hero--screenshot .hero__sub.reveal is-visible {
+  body[data-loaded="true"] #top.hero--screenshot .hero__sub.reveal.is-visible {
     animation-delay: 170ms;
   }
 
@@ -1777,14 +1807,74 @@ html[data-theme="dark"] .msg--bot {
 
 /* Input / Options Area */
 .chatbot__input {
-  padding: 12px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
   background: rgba(255, 255, 255, 0.3);
 }
 
 html[data-theme="dark"] .chatbot__input {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   background: rgba(0, 0, 0, 0.2);
+}
+
+.chatbot__form {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.chatbot__form[hidden] {
+  display: none !important;
+}
+
+.chatbot__form input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.5);
+  color: #333;
+}
+
+.chatbot__form input:focus {
+  border-color: var(--primary);
+  background: #fff;
+}
+
+.chatbot__form button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.chatbot__form button:hover {
+  transform: scale(1.05);
+}
+
+.chatbot__opt {
+  padding: 8px 12px;
+  border: 1px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chatbot__opt:hover {
+  background: var(--primary);
+  color: #fff;
 }
 
 .chatbot__options {
@@ -3569,28 +3659,44 @@ html[data-theme="light"] #depoimentos.section--alt {
 .seo-content h2 {
   font-size: 1.5rem;
   color: var(--text);
-  margin-bottom: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
   font-family: var(--font-head);
+  line-height: 1.3;
 }
 
 .seo-content h3 {
   font-size: 1.2rem;
   color: var(--text);
-  margin: 2rem 0 1rem;
+  margin: 2.5rem 0 1rem;
   font-family: var(--font-head);
+  line-height: 1.3;
+}
+
+.seo-content>*:first-child {
+  margin-top: 0;
 }
 
 .seo-content p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
+  line-height: 1.8;
 }
 
 .seo-content ul {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .seo-content li {
-  margin-bottom: 0.5rem;
+  line-height: 1.7;
+  padding-left: 0.25rem;
+}
+
+.seo-content li::marker {
+  color: var(--primary);
 }
 
 /* === COOKIE BANNER === */
@@ -3680,3 +3786,68 @@ html[data-theme="light"] #depoimentos.section--alt {
   align-items: center;
   gap: 0.45rem;
 }
+
+/* ADD: FAQ Grid Layout */
+/* === FAQ ACCORDION STYLES === */
+.faq {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.faq__item {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--card) 94%, transparent);
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faq__item[open] {
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.faq__item>summary {
+  position: relative;
+  padding: 1.1rem 3rem 1.1rem 1.25rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  line-height: 1.4;
+}
+
+.faq__item>summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__item>summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--primary);
+  transition: transform 0.25s ease, color 0.25s ease;
+  line-height: 1;
+}
+
+.faq__item[open]>summary::after {
+  transform: translateY(-50%) rotate(45deg);
+  color: var(--muted);
+}
+
+.faq__item>p {
+  margin: 0;
+  padding: 0 1.25rem 1.25rem;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+

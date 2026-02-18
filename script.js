@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   const $ = (s, root = document) => root.querySelector(s);
   const $$ = (s, root = document) => Array.from(root.querySelectorAll(s));
 
@@ -84,18 +84,18 @@
       "portfolio.p1": "Burguer",
       "portfolio.p2": "PV Car",
       "portfolio.p3": "Seguidor Express",
-      "portfolio.p4": "Dreams Travel",
+      "portfolio.p4": "Etransfers",
       "portfolio.p5": "Remodelação",
       "portfolio.p6": "Imobiliária",
 
       "testimonials.eyebrow": "Testemunhos",
       "testimonials.title.a": "O que dizem",
       "testimonials.title.b": "os nossos clientes.",
-      "testimonials.q1": "“Trabalho impecável. O meu site é rápido, seguro e transmite credibilidade internacional.”",
+      "testimonials.q1": "\u201cEstamos muito satisfeitos com o resultado final! Obrigada pelo profissionalismo, disponibilidade e acompanhamento ao cliente!\u201d",
       "testimonials.q2": "“A otimização mobile é perfeita, e o suporte para configurar o email profissional foi 5 estrelas.”",
       "testimonials.q3": "“Sem WordPress, sem lentidão. Notámos diferença imediata no ranking do Google.”",
-      "testimonials.n1": "João Ferreira",
-      "testimonials.n2": "Ana Costa",
+      "testimonials.n1": "Etransfers.pt",
+      "testimonials.n2": "Remodelação.pt",
       "testimonials.n3": "Miguel Silva",
 
       "contact.eyebrow": "Contacto",
@@ -105,7 +105,9 @@
       "contact.infoText": "Email, WhatsApp ou formulário — a escolha é sua.",
       "contact.info1": "Resposta rápida",
       "contact.info2": "Orçamento transparente",
+      "contact.info2": "Orçamento transparente",
       "contact.info3": "Proposta clara",
+      "contact.whatsapp_msg": "Olá! Vim através do site e gostaria de obter informações.",
 
       "form.name": "Nome",
       "form.email": "Email",
@@ -120,14 +122,26 @@
 
       "faqs.eyebrow": "FAQs",
       "faqs.title": "Perguntas Frequentes",
-      "faqs.q1": "Quanto tempo demora?",
-      "faqs.a1": "Depende do conteúdo, mas um site One-Page geralmente fica pronto em poucos dias.",
-      "faqs.q2": "É otimizado para mobile?",
-      "faqs.a2": "Sim. O layout é responsivo e testado em todos os dispositivos.",
-      "faqs.q3": "Posso alterar texto e imagens?",
-      "faqs.a3": "Sim. Entregamos uma estrutura simples e podemos adicionar gestão de conteúdos.",
-      "faqs.q4": "Inclui domínio e alojamento?",
-      "faqs.a4": "Podemos ajudar na configuração ou gerir tudo por si (opcional).",
+      "faqs.q1": "Quanto custa criar um site profissional em Portugal?",
+      "faqs.a1": "O preço depende da complexidade e das funcionalidades pretendidas. Um site One-Page começa a partir de 350€, enquanto projetos mais completos com SEO avançado e sistema multilingue podem variar entre 600€ e 1500€. Oferecemos sempre orçamento transparente e sem surpresas.",
+      "faqs.q2": "Qual é a diferença entre um site em WordPress e um site em código personalizado?",
+      "faqs.a2": "O WordPress usa templates genéricos que carregam plugins pesados, o que resulta em sites lentos e vulneráveis. O código personalizado (HTML, CSS, JavaScript) é escrito à medida, o que garante velocidade máxima, maior segurança e melhor posicionamento no Google.",
+      "faqs.q3": "Quanto tempo demora a criar um website?",
+      "faqs.a3": "Um site One-Page fica pronto em 3 a 7 dias úteis. Projetos mais complexos, com múltiplas páginas ou integrações, podem demorar 2 a 4 semanas. Trabalhamos com prazos definidos e comunicação constante.",
+      "faqs.q4": "O site vai aparecer no Google? Como funciona o SEO?",
+      "faqs.a4": "Sim. Todos os nossos sites são construídos com SEO técnico de base: estrutura semântica, velocidade de carregamento, meta tags, Schema.org e sitemap. Para resultados locais em Portugal ou internacionais, aplicamos estratégias específicas de SEO.",
+      "faqs.q5": "O site fica otimizado para telemóvel (mobile)?",
+      "faqs.a5": "Absolutamente. Adotamos uma abordagem Mobile-First: o design é pensado primeiro para ecrãs pequenos e depois adaptado para desktop. Testamos em múltiplos dispositivos para garantir uma experiência perfeita em qualquer ecrã.",
+      "faqs.q6": "Posso ter o site em vários idiomas?",
+      "faqs.a6": "Sim, somos especialistas em sites multilingue. Desenvolvemos sistemas de tradução rápidos e otimizados para SEO internacional, suportando português, inglês, espanhol, alemão, francês e outras línguas conforme necessário.",
+      "faqs.q7": "O site inclui domínio e alojamento (hosting)?",
+      "faqs.a7": "Podemos orientar na escolha e configuração do domínio e hosting, ou gerir tudo por si. Trabalhamos com soluções rápidas e seguras como Netlify, Vercel ou servidores dedicados, conforme o projeto.",
+      "faqs.q8": "Oferecem suporte e manutenção após o lançamento?",
+      "faqs.a8": "Sim. Temos pacotes de manutenção mensal que incluem atualizações de conteúdo, monitorização de performance, backups e suporte técnico. O seu site estará sempre atualizado e seguro.",
+      "faqs.q9": "Como funciona o processo de pagamento?",
+      "faqs.a9": "Trabalhamos com um modelo simples: 50% no início do projeto para arranque e 50% na entrega final. Aceitamos transferência bancária e MB Way. Emitimos fatura por cada pagamento.",
+      "faqs.q10": "Posso alterar os textos e imagens do site depois de entregue?",
+      "faqs.a10": "Sim. Entregamos o código-fonte completo e podemos adicionar um painel de gestão de conteúdos simples. Também oferecemos um serviço de atualização de conteúdos incluído nos pacotes de manutenção.",
 
       "footer.tagline": "Websites modernos, rápidos e focados na Europa.",
       "footer.top": "Voltar ao topo",
@@ -248,18 +262,18 @@
       "portfolio.p1": "Burguer",
       "portfolio.p2": "PV Car",
       "portfolio.p3": "Seguidor Express",
-      "portfolio.p4": "Dreams Travel",
+      "portfolio.p4": "Etransfers",
       "portfolio.p5": "Remodelação",
       "portfolio.p6": "Imobiliária",
 
       "testimonials.eyebrow": "Testimonials",
       "testimonials.title.a": "What our",
       "testimonials.title.b": "clients say",
-      "testimonials.q1": "“Super fast and modern website. Smooth and professional process.”",
+      "testimonials.q1": "“We are very happy with the final result! Thank you for the professionalism, availability and customer support!”",
       "testimonials.q2": "“Mobile version is excellent and we’re getting more leads.”",
       "testimonials.q3": "“Clean design, great communication, on-time delivery.”",
-      "testimonials.n1": "João Ferreira",
-      "testimonials.n2": "Ana Costa",
+      "testimonials.n1": "Etransfers.pt",
+      "testimonials.n2": "Remodelação.pt",
       "testimonials.n3": "Miguel Silva",
 
       "contact.eyebrow": "Contact",
@@ -270,6 +284,7 @@
       "contact.info1": "Quick response",
       "contact.info2": "No commitment",
       "contact.info3": "Clear proposal",
+      "contact.whatsapp_msg": "Hello! I came from the website and would like more information.",
 
       "form.name": "Name",
       "form.email": "Email",
@@ -284,14 +299,26 @@
 
       "faqs.eyebrow": "FAQs",
       "faqs.title": "Frequently asked questions",
-      "faqs.q1": "How long does it take?",
-      "faqs.a1": "Depends on content, but a one-page often ships in a few days.",
-      "faqs.q2": "Is it mobile-optimized?",
-      "faqs.a2": "Yes. The layout is responsive and tested across sizes.",
-      "faqs.q3": "Can I change text and images?",
-      "faqs.a3": "Yes. We deliver a simple structure and can add management if needed.",
-      "faqs.q4": "Does it include domain and hosting?",
-      "faqs.a4": "We can guide setup or manage it for you (optional).",
+      "faqs.q1": "How much does it cost to create a professional website?",
+      "faqs.a1": "The price depends on complexity and features. A One-Page site starts from €350, while more complete projects with advanced SEO and multilingual systems can range from €600 to €1500. We always offer transparent, no-surprise quotes.",
+      "faqs.q2": "What is the difference between a WordPress site and custom code?",
+      "faqs.a2": "WordPress uses generic templates that load heavy plugins, resulting in slow and vulnerable sites. Custom code (HTML, CSS, JavaScript) is written from scratch, ensuring maximum speed, greater security, and better Google rankings.",
+      "faqs.q3": "How long does it take to build a website?",
+      "faqs.a3": "A One-Page site is ready in 3 to 7 business days. More complex projects with multiple pages or integrations can take 2 to 4 weeks. We work with defined deadlines and constant communication.",
+      "faqs.q4": "Will the site appear on Google? How does SEO work?",
+      "faqs.a4": "Yes. All our sites are built with technical SEO foundations: semantic structure, loading speed, meta tags, Schema.org, and sitemap. For local results in Portugal or international reach, we apply specific SEO strategies.",
+      "faqs.q5": "Is the site optimized for mobile?",
+      "faqs.a5": "Absolutely. We adopt a Mobile-First approach: the design is conceived first for small screens and then adapted for desktop. We test on multiple devices to ensure a perfect experience on any screen.",
+      "faqs.q6": "Can I have the site in multiple languages?",
+      "faqs.a6": "Yes, we specialize in multilingual sites. We develop fast, internationally SEO-optimized translation systems supporting Portuguese, English, Spanish, German, French, and other languages as needed.",
+      "faqs.q7": "Does the site include domain and hosting?",
+      "faqs.a7": "We can guide you in choosing and configuring the domain and hosting, or manage everything for you. We work with fast, secure solutions like Netlify, Vercel, or dedicated servers, depending on the project.",
+      "faqs.q8": "Do you offer support and maintenance after launch?",
+      "faqs.a8": "Yes. We have monthly maintenance packages that include content updates, performance monitoring, backups, and technical support. Your site will always be up-to-date and secure.",
+      "faqs.q9": "How does the payment process work?",
+      "faqs.a9": "We work with a simple model: 50% at the start of the project and 50% upon final delivery. We accept bank transfer and MB Way. We issue an invoice for each payment.",
+      "faqs.q10": "Can I change texts and images after the site is delivered?",
+      "faqs.a10": "Yes. We deliver the complete source code and can add a simple content management panel. We also offer a content update service included in maintenance packages.",
 
       "footer.tagline": "Modern, fast, results-driven websites.",
       "footer.top": "Back to top",
@@ -423,18 +450,18 @@
       "portfolio.p1": "Burguer",
       "portfolio.p2": "PV Car",
       "portfolio.p3": "Seguidor Express",
-      "portfolio.p4": "Dreams Travel",
+      "portfolio.p4": "Etransfers",
       "portfolio.p5": "Remodelação",
       "portfolio.p6": "Imobiliária",
 
       "testimonials.eyebrow": "Testimonios",
       "testimonials.title.a": "Lo que dicen nuestros",
       "testimonials.title.b": "clientes",
-      "testimonials.q1": "“Web muy rápida y moderna. Proceso simple y profesional.”",
+      "testimonials.q1": "“¡Estamos muy satisfechos con el resultado final! ¡Gracias por el profesionalismo, la disponibilidad y el acompañamiento al cliente!”",
       "testimonials.q2": "“La versión móvil quedó excelente y recibimos más contactos.”",
       "testimonials.q3": "“Diseño limpio, buena comunicación y entrega a tiempo.”",
-      "testimonials.n1": "João Ferreira",
-      "testimonials.n2": "Ana Costa",
+      "testimonials.n1": "Etransfers.pt",
+      "testimonials.n2": "Remodelação.pt",
       "testimonials.n3": "Miguel Silva",
 
       "contact.eyebrow": "Contacto",
@@ -445,6 +472,7 @@
       "contact.info1": "Respuesta rápida",
       "contact.info2": "Sin compromiso",
       "contact.info3": "Propuesta clara",
+      "contact.whatsapp_msg": "¡Hola! Vengo del sitio web y me gustaría obtener información.",
 
       "form.name": "Nombre",
       "form.email": "Email",
@@ -467,6 +495,18 @@
       "faqs.a3": "Sí. Entregamos una estructura simple y podemos añadir gestión si hace falta.",
       "faqs.q4": "¿Incluye dominio y hosting?",
       "faqs.a4": "Podemos ayudarte a configurarlo o gestionarlo (opcional).",
+      "faqs.q5": "¿Cuál es la diferencia entre WordPress y Código Personalizado?",
+      "faqs.a5": "El código personalizado es más rápido, seguro y mejor para el SEO que WordPress.",
+      "faqs.q6": "¿Cuánto cuesta un sitio web?",
+      "faqs.a6": "Los precios varían según la complejidad, pero ofrecemos presupuestos transparentes.",
+      "faqs.q7": "¿Ofrecen soporte y mantenimiento?",
+      "faqs.a7": "Sí, tenemos paquetes de mantenimiento para asegurar que su sitio esté siempre actualizado.",
+      "faqs.q8": "¿Cómo funciona el pago?",
+      "faqs.a8": "Generalmente pedimos el 50% al inicio y el 50% restante a la entrega final.",
+      "faqs.q9": "¿Puedo tener el sitio en varios idiomas?",
+      "faqs.a9": "Sí, somos especialistas en sitios multilingües rápidos y optimizados para SEO internacional.",
+      "faqs.q10": "¿El sitio aparecerá en Google?",
+      "faqs.a10": "¡Sí! Todos nuestros sitios están construidos con las mejores prácticas de SEO técnico.",
 
       "footer.tagline": "Webs modernas, rápidas y enfocadas a resultados.",
       "footer.top": "Volver arriba",
@@ -598,18 +638,18 @@
       "portfolio.p1": "Burguer",
       "portfolio.p2": "PV Car",
       "portfolio.p3": "Seguidor Express",
-      "portfolio.p4": "Dreams Travel",
+      "portfolio.p4": "Etransfers",
       "portfolio.p5": "Remodelação",
       "portfolio.p6": "Imobiliária",
 
       "testimonials.eyebrow": "Referenzen",
       "testimonials.title.a": "Was unsere",
       "testimonials.title.b": "Kunden sagen",
-      "testimonials.q1": "“Sehr schnelle und moderne Website. Professioneller Ablauf.”",
+      "testimonials.q1": "“Wir sind sehr zufrieden mit dem Endergebnis! Danke für die Professionalität, Verfügbarkeit und den Kundensupport!”",
       "testimonials.q2": "“Mobile ist top — wir bekommen mehr Anfragen.”",
       "testimonials.q3": "“Cleanes Design, gute Kommunikation, pünktlich geliefert.”",
-      "testimonials.n1": "João Ferreira",
-      "testimonials.n2": "Ana Costa",
+      "testimonials.n1": "Etransfers.pt",
+      "testimonials.n2": "Remodelação.pt",
       "testimonials.n3": "Miguel Silva",
 
       "contact.eyebrow": "Kontakt",
@@ -620,6 +660,7 @@
       "contact.info1": "Schnelle Antwort",
       "contact.info2": "Unverbindlich",
       "contact.info3": "Klare Offerte",
+      "contact.whatsapp_msg": "Hallo! Ich komme von der Website und hätte gerne Informationen.",
 
       "form.name": "Name",
       "form.email": "E-Mail",
@@ -642,6 +683,18 @@
       "faqs.a3": "Ja. Wir liefern eine einfache Struktur, Management optional.",
       "faqs.q4": "Sind Domain und Hosting dabei?",
       "faqs.a4": "Wir helfen bei Setup oder übernehmen es (optional).",
+      "faqs.q5": "Was ist der Unterschied zwischen WordPress und Custom Code?",
+      "faqs.a5": "Individueller Code ist schneller, sicherer und besser für SEO als WordPress.",
+      "faqs.q6": "Wie viel kostet eine Website?",
+      "faqs.a6": "Preise variieren je nach Komplexität, aber wir bieten transparente Angebote.",
+      "faqs.q7": "Bieten Sie Support und Wartung an?",
+      "faqs.a7": "Ja, wir haben Wartungspakete, um Ihre Website aktuell zu halten.",
+      "faqs.q8": "Wie funktioniert die Bezahlung?",
+      "faqs.a8": "In der Regel verlangen wir 50% Anzahlung und die restlichen 50% bei Lieferung.",
+      "faqs.q9": "Kann ich die Website in mehreren Sprachen haben?",
+      "faqs.a9": "Ja, wir sind spezialisiert auf schnelle, mehrsprachige Websites, die für internationales SEO optimiert sind.",
+      "faqs.q10": "Wird die Website bei Google erscheinen?",
+      "faqs.a10": "Ja! Alle unsere Websites werden nach besten SEO-Praktiken erstellt.",
 
       "footer.tagline": "Moderne, schnelle und ergebnisorientierte Websites.",
       "footer.top": "Nach oben",
@@ -773,7 +826,7 @@
       "portfolio.p1": "Burguer",
       "portfolio.p2": "PV Car",
       "portfolio.p3": "Seguidor Express",
-      "portfolio.p4": "Dreams Travel",
+      "portfolio.p4": "Etransfers",
       "portfolio.p5": "Remodelação",
       "portfolio.p6": "Imobiliária",
 
@@ -783,8 +836,8 @@
       "testimonials.q1": "“网站很快也很现代，沟通与交付都很专业。”",
       "testimonials.q2": "“移动端效果非常好，我们收到更多咨询了。”",
       "testimonials.q3": "“设计干净，沟通顺畅，按时交付。”",
-      "testimonials.n1": "João Ferreira",
-      "testimonials.n2": "Ana Costa",
+      "testimonials.n1": "Etransfers.pt",
+      "testimonials.n2": "Remodelação.pt",
       "testimonials.n3": "Miguel Silva",
 
       "contact.eyebrow": "联系",
@@ -795,6 +848,7 @@
       "contact.info1": "快速回复",
       "contact.info2": "无压力",
       "contact.info3": "方案清晰",
+      "contact.whatsapp_msg": "您好！我来自官网，想了解更多信息。",
 
       "form.name": "姓名",
       "form.email": "邮箱",
@@ -816,7 +870,19 @@
       "faqs.q3": "我可以改文字和图片吗？",
       "faqs.a3": "可以。我们提供简单结构，也可选配管理功能。",
       "faqs.q4": "包含域名和主机吗？",
-      "faqs.a4": "可指导配置或代为管理（可选）。",
+      "faqs.a4": "我們可以幫助您設置或為您管理（可選）。",
+      "faqs.q5": "WordPress 和定制代码有什么区别？",
+      "faqs.a5": "定制代码比 WordPress 更快、更安全，并且更有利于 SEO。",
+      "faqs.q6": "做一个网站需要多少钱？",
+      "faqs.a6": "价格根据复杂程度而异，但我们提供透明的报价。",
+      "faqs.q7": "你们提供支持和维护吗？",
+      "faqs.a7": "是的，我们有维护套餐，以确保您的网站始终保持更新。",
+      "faqs.q8": "付款方式是怎样的？",
+      "faqs.a8": "通常，我们要求预付 50%，剩余 50% 在交付时支付。",
+      "faqs.q9": "我可以拥有多语言网站吗？",
+      "faqs.a9": "是的，我们专注于构建快速的、针对国际 SEO 优化的多语言网站。",
+      "faqs.q10": "网站会出现在 Google 上吗？",
+      "faqs.a10": "是的！我们所有的网站都是按照最佳技术 SEO 实践构建的。",
 
       "footer.tagline": "现代、快速、结果导向的网站。",
       "footer.top": "返回顶部",
@@ -878,16 +944,201 @@
 
     // Optional: only needed if your UI actually switches to "fr"
     fr: {
-      // include full fr later; these fix the 3 cards immediately
+      skip: "Aller au contenu",
+      "nav.about": "À propos",
+      "nav.services": "Services",
+      "nav.portfolio": "Portfolio",
+      "nav.testimonials": "Témoignages",
+      "nav.contact": "Contact",
+      "nav.faqs": "FAQs",
+      theme: "Thème",
+      "lang.label": "Langue",
+      "cta.header": "Demander un devis",
+
+      "hero.pill": "Développement Web Professionnel",
+      "hero.h1.a": "Présence Digitale",
+      "hero.h1.b": "à fort impact",
+      "hero.h1.c": "global.",
+      "hero.sub1": "Sites web haute performance, SEO technique et conformité totale (RGPD). Conçus au Portugal pour les entreprises qui exigent l'excellence.",
+      "hero.sub2": "Pas de templates lents. Uniquement du code propre et des résultats mesurables.",
+      "hero.chip1": "Performance 100%",
+      "hero.chip2": "SEO International",
+      "hero.chip3": "Support Premium",
+      "hero.chip4": "Multilingue",
+      "hero.badge1": "Livraison Rapide",
+      "hero.badge2": "Google Friendly",
+      "hero.badge3": "Sans WordPress",
+      "hero.kpi1": "Score Lighthouse",
+      "hero.kpi2": "Chargement",
+      "hero.kpi3": "Mobile First",
+
+      "about.eyebrow": "À propos",
+      "about.title.a": "Une équipe dédiée à",
+      "about.title.b": "l'excellence digitale",
+      "about.desc": "Chez Webmari.pt, nous croyons que chaque entreprise mérite une présence en ligne unique. Notre mission est de transformer votre vision en une réalité digitale qui impressionne visuellement et génère des résultats concrets.",
+      "about.p1": "Code Personnalisé",
+      "about.p2": "Multilingue",
+      "about.p3": "Sécurisé & Rapide",
+      "about.p4": "SEO Avancé",
       "about.c1.title": "Design moderne",
       "about.c1.text": "Interfaces propres, cohérentes et accessibles.",
       "about.c2.title": "Performance réelle",
       "about.c2.text": "Code optimisé, images légères et chargement rapide.",
       "about.c3.title": "Focus sur les résultats",
       "about.c3.text": "Structure pensée pour générer des contacts et des conversions.",
-      "testimonials.q4": "“Excellente communication et livraison dans les délais. Le résultat a dépassé nos attentes.”",
-      "testimonials.n4": "Sofia Martins",
+      "about.s1": "Projets Livrés",
+      "about.s2": "Clients Satisfaits",
+      "about.s3": "Années d'Expérience",
+      "about.s4": "Pays Servis",
+
+      "services.eyebrow": "Services",
+      "services.title": "Solutions complètes pour votre succès en ligne.",
+      "services.lead": "Du concept au lancement — et amélioration continue.",
+      "services.s1.title": "Site One-Page",
+      "services.s1.text": "Landing page moderne pour présenter et convertir.",
+      "services.s2.title": "SEO & Performance",
+      "services.s2.text": "Meilleure structure, vitesse et indexation.",
+      "services.s3.title": "Identité & UI",
+      "services.s3.text": "Identité visuelle et composants cohérents.",
+      "services.s4.title": "Contenu",
+      "services.s4.text": "Messages, copywriting et structure CTA.",
+      "services.s5.title": "Sécurité",
+      "services.s5.text": "Bonnes pratiques et protection de base.",
+      "services.s6.title": "Maintenance",
+      "services.s6.text": "Mises à jour, améliorations et support.",
+
+      "portfolio.eyebrow": "Portfolio",
+      "portfolio.title": "Des projets qui font la différence.",
+      "portfolio.lead": "Quelques exemples récents de notre travail.",
+      "portfolio.tag1": "Landing Page",
+      "portfolio.tag2": "Corporate",
+      "portfolio.tag3": "UI Design",
+      "portfolio.tag4": "SEO",
+      "portfolio.tag5": "Mobile",
+      "portfolio.tag6": "One Page",
+      "portfolio.p1": "Burguer",
+      "portfolio.p2": "PV Car",
+      "portfolio.p3": "Seguidor Express",
+      "portfolio.p4": "Etransfers",
+      "portfolio.p5": "Remodelação",
+      "portfolio.p6": "Imobiliária",
+
+      "testimonials.eyebrow": "Témoignages",
+      "testimonials.title.a": "Ce que disent",
+      "testimonials.title.b": "nos clients.",
+      "testimonials.q1": "\u201cNous sommes très satisfaits du résultat final ! Merci pour le professionnalisme, la disponibilité et le suivi client !\u201d",
+      "testimonials.q2": "\u201cL'optimisation mobile est parfaite et le support pour configurer l'email professionnel était 5 étoiles.\u201d",
+      "testimonials.q3": "\u201cSans WordPress, sans lenteur. Nous avons remarqué une différence immédiate dans le classement Google.\u201d",
+      "testimonials.n1": "Etransfers.pt",
+      "testimonials.n2": "Remodelação.pt",
+      "testimonials.n3": "Miguel Silva",
+
+      "contact.eyebrow": "Contact",
+      "contact.title": "Travaillons ensemble.",
+      "contact.lead": "Envoyez-nous les détails de votre projet. Nous répondons sous 24h.",
+      "contact.infoTitle": "Parlons-en",
+      "contact.infoText": "Email, WhatsApp ou formulaire — à votre choix.",
+      "contact.info1": "Réponse rapide",
+      "contact.info2": "Devis transparent",
+      "contact.info3": "Proposition claire",
+      "contact.whatsapp_msg": "Bonjour ! Je viens du site et j'aimerais obtenir des informations.",
+
+      "form.name": "Nom",
+      "form.email": "Email",
+      "form.phone": "Téléphone (optionnel)",
+      "form.service": "Service",
+      "form.servicePh": "Choisir...",
+      "form.service1": "Site One-Page",
+      "form.service2": "Refonte",
+      "form.service3": "SEO & Performance",
+      "form.message": "Message",
+      "form.submit": "Envoyer",
+
+      "faqs.eyebrow": "FAQs",
+      "faqs.title": "Questions fréquentes",
+      "faqs.q1": "Combien coûte la création d'un site professionnel ?",
+      "faqs.a1": "Le prix dépend de la complexité et des fonctionnalités souhaitées. Un site One-Page commence à partir de 350€, tandis que des projets plus complets avec SEO avancé et système multilingue peuvent varier entre 600€ et 1500€. Nous offrons toujours un devis transparent et sans surprises.",
+      "faqs.q2": "Quelle est la différence entre WordPress et le code personnalisé ?",
+      "faqs.a2": "WordPress utilise des templates génériques avec des plugins lourds, ce qui entraîne des sites lents et vulnérables. Le code personnalisé (HTML, CSS, JavaScript) est écrit sur mesure, garantissant une vitesse maximale, une meilleure sécurité et un meilleur positionnement sur Google.",
+      "faqs.q3": "Combien de temps faut-il pour créer un site web ?",
+      "faqs.a3": "Un site One-Page est prêt en 3 à 7 jours ouvrables. Des projets plus complexes avec plusieurs pages ou intégrations peuvent prendre 2 à 4 semaines. Nous travaillons avec des délais définis et une communication constante.",
+      "faqs.q4": "Le site apparaîtra-t-il sur Google ? Comment fonctionne le SEO ?",
+      "faqs.a4": "Oui. Tous nos sites sont construits avec les bases du SEO technique : structure sémantique, vitesse de chargement, balises meta, Schema.org et sitemap. Pour des résultats locaux ou internationaux, nous appliquons des stratégies SEO spécifiques.",
+      "faqs.q5": "Le site est-il optimisé pour mobile ?",
+      "faqs.a5": "Absolument. Nous adoptons une approche Mobile-First : le design est d'abord pensé pour les petits écrans puis adapté au bureau. Nous testons sur plusieurs appareils pour garantir une expérience parfaite sur n'importe quel écran.",
+      "faqs.q6": "Puis-je avoir le site en plusieurs langues ?",
+      "faqs.a6": "Oui, nous sommes spécialistes des sites multilingues. Nous développons des systèmes de traduction rapides et optimisés pour le SEO international, supportant le portugais, l'anglais, l'espagnol, l'allemand, le français et d'autres langues.",
+      "faqs.q7": "Le site inclut-il le domaine et l'hébergement ?",
+      "faqs.a7": "Nous pouvons vous guider dans le choix et la configuration du domaine et de l'hébergement, ou tout gérer pour vous. Nous travaillons avec des solutions rapides et sécurisées comme Netlify, Vercel ou des serveurs dédiés.",
+      "faqs.q8": "Proposez-vous un support et une maintenance après le lancement ?",
+      "faqs.a8": "Oui. Nous avons des forfaits de maintenance mensuelle incluant les mises à jour de contenu, la surveillance des performances, les sauvegardes et le support technique. Votre site sera toujours à jour et sécurisé.",
+      "faqs.q9": "Comment fonctionne le processus de paiement ?",
+      "faqs.a9": "Nous travaillons avec un modèle simple : 50% au début du projet et 50% à la livraison finale. Nous acceptons les virements bancaires et MB Way. Nous émettons une facture pour chaque paiement.",
+      "faqs.q10": "Puis-je modifier les textes et images après la livraison ?",
+      "faqs.a10": "Oui. Nous livrons le code source complet et pouvons ajouter un panneau de gestion de contenu simple. Nous proposons également un service de mise à jour de contenu inclus dans les forfaits de maintenance.",
+
+      "footer.tagline": "Sites web modernes, rapides et axés sur les résultats.",
+      "footer.top": "Retour en haut",
+      "footer.desc": "Développement web professionnel avec code personnalisé, SEO avancé et systèmes multilingues. Votre présence en ligne, sur mesure.",
+      "footer.services": "Services",
+      "footer.links": "Liens",
+      "footer.service1": "Sites Corporate",
+      "footer.service2": "Design Responsive",
+      "footer.service3": "SEO Avancé",
+      "footer.service4": "Systèmes Multilingues",
+      "footer.privacy": "Politique de Confidentialité",
+      "footer.terms": "Conditions d'Utilisation",
+      "footer.rights": "Tous droits réservés.",
+
+      "seo.h1": "Experts en Création de Sites Web et Web Design axés sur la Performance",
+      "seo.text": `
+        <h3>Développement Web et Création de Sites au Portugal</h3>
+        <p>
+          Si vous cherchez une <strong>agence de web design au Portugal</strong> ou un développeur freelance expérimenté pour la <strong>création de sites professionnels</strong>, Webmari.pt est votre partenaire idéal. Nous sommes spécialisés dans le développement de solutions digitales sur mesure, des <em>landing pages</em> à fort taux de conversion aux sites corporate complexes.
+        </p>
+        <p>
+          Contrairement aux agences traditionnelles qui utilisent des templates WordPress ou Wix lourds, nous parions sur la <strong>programmation de sites à la main</strong> (HTML, CSS, JavaScript). Cela garantit que votre site est extrêmement rapide, sécurisé et apprécié par les moteurs de recherche comme Google.
+        </p>
+        <h3>Optimisation SEO et Performance (Core Web Vitals)</h3>
+        <p>
+          L'<strong>optimisation pour les moteurs de recherche (SEO)</strong> n'est pas un extra, c'est la base de notre travail. Nos sites atteignent régulièrement des scores de 90-100 sur Google PageSpeed Insights, un facteur crucial pour apparaître en première page de Google.
+        </p>
+        <ul>
+          <li><strong>Création de Sites Institutionnels :</strong> Pour les entreprises qui veulent affirmer leur marque.</li>
+          <li><strong>Landing Pages :</strong> Axées sur les campagnes marketing et la conversion.</li>
+          <li><strong>Développement Web Sur Mesure :</strong> Fonctionnalités spécifiques pour votre activité.</li>
+          <li><strong>Conseil Web et Maintenance :</strong> Support technique continu et mises à jour.</li>
+        </ul>
+      `,
+
+      "cookies.title": "Cookies 🍪",
+      "cookies.text": "Nous utilisons des cookies pour améliorer votre expérience. En continuant à naviguer, vous acceptez notre politique de confidentialité.",
+      "cookies.accept": "Accepter",
+      "cookies.decline": "Refuser",
     },
+  };
+
+  /* =========================================
+     WHATSAPP DYNAMIC LINK
+     ========================================= */
+  const updateWhatsAppLink = () => {
+    try {
+      const btn = $(".contact-btn--whatsapp");
+      if (!btn) return;
+
+      // Get current message based on active language
+      const lang = document.documentElement.lang || "pt";
+      const currentLangData = i18n[lang] || i18n["pt"];
+      const msg = currentLangData["contact.whatsapp_msg"] || "Olá! Vim através do site.";
+
+      // Phone number
+      const phone = "351925928900";
+
+      // Update href
+      btn.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    } catch (e) {
+      console.error("WhatsApp link update failed:", e);
+    }
   };
 
   // NEW: swap brand logos based on theme AND device
@@ -916,7 +1167,9 @@
         nextSrc = theme === "dark" ? (desktopDark || desktopLight) : (desktopLight || desktopDark);
       }
 
-      if (nextSrc) img.setAttribute("src", nextSrc);
+      if (nextSrc && img.getAttribute("src") !== nextSrc) {
+        img.setAttribute("src", nextSrc);
+      }
     });
   };
 
@@ -969,6 +1222,8 @@
 
     // NEW: Notify other components (like chatbot)
     document.dispatchEvent(new CustomEvent("webmari:lang-change", { detail: { lang } }));
+
+    updateWhatsAppLink(); // Update link when language changes
   };
 
   const getInitialLang = () => {
@@ -1015,8 +1270,13 @@
 
   const syncHeaderHeightVar = () => {
     if (!header) return;
-    const h = Math.ceil(header.getBoundingClientRect().height || 0);
-    if (h > 0) document.documentElement.style.setProperty("--header-h", `${h}px`);
+    const observer = new ResizeObserver(entries => {
+      for (const entry of entries) {
+        const h = Math.ceil(entry.contentRect.height || 0);
+        if (h > 0) document.documentElement.style.setProperty("--header-h", `${h}px`);
+      }
+    });
+    observer.observe(header);
   };
 
   const setElevated = () => {
@@ -1097,7 +1357,7 @@
       requestAnimationFrame(() => {
         document.body?.setAttribute("data-loaded", "true");
 
-        if (!reduceMotion) {
+        if (!reduceMotion && window.matchMedia("(min-width: 768px)").matches) {
           // ensure hero items animate in immediately on load
           $$("#top .reveal").forEach((el) => el.classList.add("is-visible"));
 
@@ -1116,48 +1376,6 @@
     });
   };
 
-  const runTypewriter = async () => {
-    const lines = [
-      $('[data-i18n="hero.h1.a"]'),
-      $('[data-i18n="hero.h1.b"]'),
-      $('[data-i18n="hero.h1.c"]'),
-    ];
-
-    if (!lines[0]) return;
-
-    // Get current text to type
-    const texts = lines.map((el) => el.textContent);
-
-    // Clear
-    lines.forEach((el) => (el.textContent = ""));
-
-    const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-    const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
-
-    // Initial delay
-    await wait(500);
-
-    for (let i = 0; i < lines.length; i++) {
-      const el = lines[i];
-      const text = texts[i];
-
-      el.classList.add("typing-cursor");
-
-      for (let j = 0; j <= text.length; j++) {
-        el.textContent = text.substring(0, j);
-        await wait(random(30, 70));
-      }
-
-      // Keep cursor on last line for a bit, otherwise remove immediately
-      if (i < lines.length - 1) {
-        el.classList.remove("typing-cursor");
-      } else {
-        // Blink for a while on last line then remove
-        await wait(3000);
-        el.classList.remove("typing-cursor");
-      }
-    }
-  };
 
   // FAQ: single-open behavior (optional)
   const setupFaq = () => {
@@ -1174,73 +1392,7 @@
     });
   };
 
-  // Contact form: validation + feedback
-  const setupForm = () => {
-    const form = $("[data-contact-form]");
-    const status = $("[data-form-status]");
-    if (!form || !status) return;
-
-    // Helper: validate single field
-    const validateField = (field) => {
-      const input = field.querySelector("input, select, textarea");
-      if (!input) return;
-
-      const isValid = input.checkValidity();
-      if (isValid) {
-        field.classList.remove("invalid");
-        field.classList.add("valid");
-      } else {
-        field.classList.remove("valid");
-        field.classList.add("invalid");
-      }
-    };
-
-    // Add listeners
-    const inputs = form.querySelectorAll("input, select, textarea");
-    inputs.forEach((input) => {
-      const field = input.closest(".field");
-      if (!field) return;
-
-      input.addEventListener("blur", () => validateField(field));
-      input.addEventListener("input", () => {
-        // If it was already invalid, check if user fixed it
-        if (field.classList.contains("invalid")) validateField(field);
-      });
-    });
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      // Check all valid?
-      let allValid = true;
-      inputs.forEach((input) => {
-        if (!input.checkValidity()) allValid = false;
-        validateField(input.closest(".field"));
-      });
-
-      if (!allValid) {
-        status.textContent = "Por favor corrija os erros acima.";
-        status.style.color = "#ef4444";
-        return;
-      }
-
-      const fd = new FormData(form);
-      const name = String(fd.get("name") || "").trim();
-
-      // Replace this with real POST (fetch) to your endpoint.
-      status.textContent = name
-        ? `Obrigado, ${name}. Vamos responder em breve.`
-        : "Obrigado. Vamos responder em breve.";
-      status.style.color = "var(--primary)";
-
-      form.reset();
-      inputs.forEach((input) => {
-        const field = input.closest(".field");
-        field?.classList.remove("valid", "invalid");
-      });
-      setTimeout(() => (status.textContent = ""), 5000);
-    });
-  };
+  // Form handling removed
 
   const setupBackToTop = () => {
     const btn = $("[data-backtotop]");
@@ -1315,9 +1467,9 @@
     if (e.matches) closeNav();
   });
 
-  // NEW: measure once after first layout, and keep updated
+  // NEW: measure once after first layout, and keep updated via Observer
   syncHeaderHeightVar();
-  window.addEventListener("resize", syncHeaderHeightVar, { passive: true });
+  // removed window resize listener for syncHeaderHeightVar as it now uses ResizeObserver
 
   // Header + scroll
   setElevated();
@@ -1397,7 +1549,9 @@
     if (!aboutLines[0]) return;
 
     // Prepare elements (hide text initially)
-    aboutLines.forEach(el => el.style.opacity = "0");
+    if (!window.matchMedia("(max-width: 768px)").matches) {
+      aboutLines.forEach(el => el.style.opacity = "0");
+    }
 
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1413,6 +1567,8 @@
   };
 
   const typewriterEffect = async (lines, initialDelay = 0) => {
+    // Disable on mobile
+    if (window.matchMedia("(max-width: 768px)").matches) return;
     if (!lines || !lines[0]) return;
 
     // Filter out nulls just in case
@@ -1421,8 +1577,11 @@
     // Get current text to type
     const texts = validLines.map((el) => el.textContent);
 
-    // Clear content
-    validLines.forEach((el) => (el.textContent = ""));
+    // Clear content but lock height first to prevent CLS
+    validLines.forEach((el) => {
+      el.style.minHeight = `${el.offsetHeight}px`;
+      el.textContent = "";
+    });
 
     const wait = (ms) => new Promise((r) => setTimeout(r, ms));
     const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
@@ -1445,7 +1604,7 @@
         el.classList.remove("typing-cursor");
       } else {
         // Blink for a while on last line then remove
-        await wait(3000);
+        await wait(500);
         el.classList.remove("typing-cursor");
       }
     }
@@ -1457,6 +1616,7 @@
   /* =========================================
      CHATBOT LOGIC (Multilingual)
      ========================================= */
+
   const initChatbot = () => {
     const chatbot = document.getElementById("chatbot");
     const toggleBtn = document.getElementById("chat-toggle");
@@ -1480,15 +1640,21 @@
         explore_msg: "Sem problema! Sinta-se à vontade para navegar pelo nosso portfólio e serviços. Se precisar de algo, estarei por aqui.",
         opt_portfolio: "Ver Portfólio",
         opt_reset: "Voltar ao início",
-        faq_msg: "Perfeito! Sobre qual assunto você tem dúvidas?",
-        faq_opt_price: "Preços",
-        faq_opt_deadline: "Prazos",
-        faq_opt_support: "Suporte",
-        faq_opt_who: "Quem atendem?",
-        price_msg: "Os nossos projetos começam em cerca de **400 €** e podem chegar a **10.000 €**, dependendo da complexidade. Quer fazer um orçamento rápido?",
+        faq_msg: "Perfeito! Sobre qual assunto tens dúvidas?",
+        faq_opt_price: "💰 Preços e pagamento",
+        faq_opt_deadline: "⏱️ Prazos de entrega",
+        faq_opt_wp: "⚡ WordPress vs Código Personalizado",
+        faq_opt_seo: "🔍 SEO e Google",
+        faq_opt_mobile: "📱 Mobile e Idiomas",
+        faq_opt_support: "🛠️ Suporte e manutenção",
+        price_msg: "Um site One-Page começa a partir de **350€**. Projetos mais completos com SEO avançado e sistema multilingue variam entre **600€ e 1500€**. Oferecemos sempre orçamento transparente e sem surpresas. Quer pedir um orçamento?",
         opt_yes_budget: "Sim, quero orçamento",
         opt_back_faq: "Voltar às dúvidas",
-        deadline_msg: "O prazo mínimo é de cerca de **2 semanas**. Projetos maiores podem levar de 1 a 3 meses.",
+        deadline_msg: "Um site One-Page fica pronto em **3 a 7 dias úteis**. Projetos mais complexos com múltiplas páginas ou integrações podem demorar **2 a 4 semanas**. Trabalhamos com prazos definidos e comunicação constante.",
+        wp_msg: "O WordPress usa templates genéricos com plugins pesados — resultado: sites lentos e vulneráveis. O nosso código personalizado (HTML, CSS, JavaScript) é escrito à medida, garantindo **velocidade máxima**, maior segurança e **melhor posicionamento no Google**.",
+        seo_msg: "Sim! Todos os nossos sites têm SEO técnico de base: estrutura semântica, velocidade de carregamento, meta tags, Schema.org e sitemap. Para resultados locais em Portugal ou internacionais, aplicamos estratégias específicas.",
+        mobile_msg: "Adotamos uma abordagem **Mobile-First** — o design é pensado primeiro para telemóvel. Também somos especialistas em sites **multilingue** (PT, EN, ES, DE, FR e mais), otimizados para SEO internacional.",
+        support_msg: "Sim! Temos pacotes de manutenção mensal com atualizações de conteúdo, monitorização de performance, backups e suporte técnico. O pagamento é simples: **50% no início** e **50% na entrega**. Aceitamos transferência bancária e MB Way.",
         target_msg: "Atendemos de tudo: desde pequenos negócios locais até indústrias e e-commerce.",
         support_filter_msg: "Sobre suporte, só para eu entender melhor:",
         opt_client: "Já sou cliente",
@@ -1508,9 +1674,33 @@
         budget_ready: "Já tem materiais prontos (logo, textos)?",
         budget_deadline: "Tem alguma ideia de prazo?",
         budget_value: "Qual é o orçamento aproximado?",
-        budget_low: "O nosso trabalho personalizado começa nos 400€, mas fale connosco no WhatsApp.",
+        budget_low: "O nosso trabalho personalizado começa nos 350€, mas fale connosco no WhatsApp.",
         budget_final: "Obrigado! Clique abaixo para enviar este resumo para o nosso WhatsApp.",
-        opt_send_wa: "Enviar pelo WhatsApp"
+        opt_send_wa: "Enviar pelo WhatsApp",
+
+        // Budget Options
+        budget_opt_web: "Website",
+        budget_opt_landing: "Landing Page",
+        budget_opt_ecom: "E-Commerce",
+        budget_opt_redesign: "Redesign",
+        budget_seg_services: "Serviços",
+        budget_seg_commerce: "Comércio",
+        budget_seg_health: "Saúde",
+        budget_seg_other: "Outro",
+
+        budget_ans_yes: "Sim",
+        budget_ans_no: "Não",
+        budget_time_1m: "1 mês",
+        budget_time_23m: "2-3 meses",
+        budget_time_norush: "Sem pressa",
+
+        budget_range_low: "350€ - 1.000€",
+        budget_range_mid: "1.000€ - 3.000€",
+        budget_range_high: "+ 3.000€",
+        budget_range_micro: "< 350€",
+
+        ask_name: "Antes de começarmos, como se chama?",
+        wa_template: "Olá, chamo-me {name} e gostaria de um orçamento para: {details}"
       },
       en: {
         welcome: "Hello! I'm Webmari's virtual assistant. Do you want to ask a quick question or request a quote?",
@@ -1550,7 +1740,31 @@
         budget_value: "What is your approximate budget?",
         budget_low: "Our custom work starts at €400, but chat with us on WhatsApp.",
         budget_final: "Thanks! Click below to send this summary to our WhatsApp.",
-        opt_send_wa: "Send via WhatsApp"
+        opt_send_wa: "Send via WhatsApp",
+
+        // Budget Options
+        budget_opt_web: "Website",
+        budget_opt_landing: "Landing Page",
+        budget_opt_ecom: "E-Commerce",
+        budget_opt_redesign: "Redesign",
+        budget_seg_services: "Services",
+        budget_seg_commerce: "Commerce",
+        budget_seg_health: "Health",
+        budget_seg_other: "Other",
+
+        budget_ans_yes: "Yes",
+        budget_ans_no: "No",
+        budget_time_1m: "1 month",
+        budget_time_23m: "2-3 months",
+        budget_time_norush: "No rush",
+
+        budget_range_low: "350€ - 1.000€",
+        budget_range_mid: "1.000€ - 3.000€",
+        budget_range_high: "+ 3.000€",
+        budget_range_micro: "< 350€",
+
+        ask_name: "Before we start, what is your name?",
+        wa_template: "Hello, my name is {name} and I would like a quote for: {details}"
       },
       es: {
         welcome: "¡Hola! Soy el asistente virtual de Webmari. ¿Quieres hacer una pregunta o pedir un presupuesto?",
@@ -1590,7 +1804,31 @@
         budget_value: "¿Cuál es el presupuesto aproximado?",
         budget_low: "Nuestro trabajo comienza en 400€, pero habla con nosotros en WhatsApp.",
         budget_final: "¡Gracias! Haz clic abajo para enviar este resumen a nuestro WhatsApp.",
-        opt_send_wa: "Enviar por WhatsApp"
+        opt_send_wa: "Enviar por WhatsApp",
+
+        // Budget Options
+        budget_opt_web: "Sitio Web",
+        budget_opt_landing: "Landing Page",
+        budget_opt_ecom: "Tienda Online",
+        budget_opt_redesign: "Rediseño",
+        budget_seg_services: "Servicios",
+        budget_seg_commerce: "Comercio",
+        budget_seg_health: "Salud",
+        budget_seg_other: "Otro",
+
+        budget_ans_yes: "Sí",
+        budget_ans_no: "No",
+        budget_time_1m: "1 mes",
+        budget_time_23m: "2-3 meses",
+        budget_time_norush: "Sin prisa",
+
+        budget_range_low: "350€ - 1.000€",
+        budget_range_mid: "1.000€ - 3.000€",
+        budget_range_high: "+ 3.000€",
+        budget_range_micro: "< 350€",
+
+        ask_name: "Antes de empezar, ¿cómo te llamas?",
+        wa_template: "Hola, me llamo {name} y me gustaría un presupuesto para: {details}"
       },
       de: {
         welcome: "Hallo! Ich bin der virtuelle Assistent von Webmari. Möchten Sie eine Frage stellen oder ein Angebot anfordern?",
@@ -1630,7 +1868,31 @@
         budget_value: "Welches Budget haben Sie?",
         budget_low: "Unsere Arbeit beginnt bei 400€, aber schreiben Sie uns bei WhatsApp.",
         budget_final: "Danke! Klicken Sie unten, um diese Zusammenfassung an WhatsApp zu senden.",
-        opt_send_wa: "Per WhatsApp senden"
+        opt_send_wa: "Per WhatsApp senden",
+
+        // Budget Options
+        budget_opt_web: "Webseite",
+        budget_opt_landing: "Landing Page",
+        budget_opt_ecom: "Online-Shop",
+        budget_opt_redesign: "Neugestaltung",
+        budget_seg_services: "Dienstleistungen",
+        budget_seg_commerce: "Handel",
+        budget_seg_health: "Gesundheit",
+        budget_seg_other: "Andere",
+
+        budget_ans_yes: "Ja",
+        budget_ans_no: "Nein",
+        budget_time_1m: "1 Monat",
+        budget_time_23m: "2-3 Monate",
+        budget_time_norush: "Keine Eile",
+
+        budget_range_low: "350€ - 1.000€",
+        budget_range_mid: "1.000€ - 3.000€",
+        budget_range_high: "+ 3.000€",
+        budget_range_micro: "< 350€",
+
+        ask_name: "Bevor wir anfangen, wie heißen Sie?",
+        wa_template: "Hallo, ich heiße {name} und hätte gerne ein Angebot für: {details}"
       },
       zh: {
         welcome: "你好！我是 Webmari 的虚拟助手。你想快速咨询还是询价？",
@@ -1670,7 +1932,101 @@
         budget_value: "您的预算大约是多少？",
         budget_low: "我们的定制服务起价 400€，但请在 WhatsApp 联系我们。",
         budget_final: "谢谢！点击下方将此摘要发送到我们的 WhatsApp。",
-        opt_send_wa: "通过 WhatsApp 发送"
+        opt_send_wa: "通过 WhatsApp 发送",
+
+        // Budget Options
+        budget_opt_web: "网站",
+        budget_opt_landing: "落地页",
+        budget_opt_ecom: "电商",
+        budget_opt_redesign: "重新设计",
+        budget_seg_services: "服务业",
+        budget_seg_commerce: "商业",
+        budget_seg_health: "健康",
+        budget_seg_other: "其他",
+
+        budget_ans_yes: "是",
+        budget_ans_no: "否",
+        budget_time_1m: "1个月",
+        budget_time_23m: "2-3个月",
+        budget_time_norush: "不急",
+
+        budget_range_low: "350€ - 1.000€",
+        budget_range_mid: "1.000€ - 3.000€",
+        budget_range_high: "+ 3.000€",
+        budget_range_micro: "< 350€",
+
+        ask_name: "开始之前，请问您怎么称呼？",
+        wa_template: "您好，我叫 {name}，我想询价：{details}"
+      },
+      fr: {
+        welcome: "Bonjour ! Je suis l'assistant virtuel de Webmari. Vous souhaitez poser une question rapide ou demander un devis pour un projet ?",
+        opt_faq: "Poser une question",
+        opt_budget: "Demander un devis",
+        opt_explore: "Je regarde juste",
+        explore_msg: "Pas de problème ! N'hésitez pas à parcourir notre portfolio et nos services. Je suis là si vous avez besoin.",
+        opt_portfolio: "Voir le Portfolio",
+        opt_reset: "Retour au début",
+        faq_msg: "Parfait ! Sur quel sujet avez-vous des questions ?",
+        faq_opt_price: "💰 Prix et paiement",
+        faq_opt_deadline: "⏱️ Délais de livraison",
+        faq_opt_wp: "⚡ WordPress vs Code Personnalisé",
+        faq_opt_seo: "🔍 SEO et Google",
+        faq_opt_mobile: "📱 Mobile et Langues",
+        faq_opt_support: "🛠️ Support et maintenance",
+        price_msg: "Un site One-Page commence à partir de **350€**. Des projets plus complets avec SEO avancé et système multilingue varient entre **600€ et 1500€**. Nous offrons toujours un devis transparent. Souhaitez-vous en demander un ?",
+        opt_yes_budget: "Oui, je veux un devis",
+        opt_back_faq: "Retour aux questions",
+        deadline_msg: "Un site One-Page est prêt en **3 à 7 jours ouvrables**. Des projets plus complexes avec plusieurs pages ou intégrations peuvent prendre **2 à 4 semaines**. Nous travaillons avec des délais définis et une communication constante.",
+        wp_msg: "WordPress utilise des templates génériques avec des plugins lourds — résultat : sites lents et vulnérables. Notre code personnalisé (HTML, CSS, JavaScript) est écrit sur mesure, garantissant **vitesse maximale**, meilleure sécurité et **meilleur positionnement sur Google**.",
+        seo_msg: "Oui ! Tous nos sites ont les bases du SEO technique : structure sémantique, vitesse de chargement, balises meta, Schema.org et sitemap. Pour des résultats locaux ou internationaux, nous appliquons des stratégies spécifiques.",
+        mobile_msg: "Nous adoptons une approche **Mobile-First** — le design est d'abord pensé pour les petits écrans. Nous sommes également spécialistes des sites **multilingues** (PT, EN, ES, DE, FR et plus), optimisés pour le SEO international.",
+        support_msg: "Oui ! Nous avons des forfaits de maintenance mensuelle avec mises à jour de contenu, surveillance des performances, sauvegardes et support technique. Le paiement est simple : **50% au début** et **50% à la livraison**. Nous acceptons les virements bancaires et MB Way.",
+        target_msg: "Nous servons tout le monde : des petites entreprises locales aux industries et e-commerces.",
+        support_filter_msg: "À propos du support, pour mieux comprendre :",
+        opt_client: "Je suis déjà client",
+        opt_new: "Je ne suis pas encore client",
+        client_msg: "Parfait ! Dites-moi brièvement ce dont vous avez besoin :",
+        opt_tech: "Problème technique",
+        opt_content: "Modifier du contenu",
+        opt_feature: "Nouvelle fonctionnalité",
+        tech_contact: "Merci ! Envoyez un email à **marianakb345@gmail.com** ou utilisez WhatsApp pour les urgences.",
+        content_contact: "Envoyez un email à **marianakb345@gmail.com** en indiquant les modifications.",
+        feature_contact: "Décrivez la fonctionnalité sur WhatsApp ou par email pour que nous estimions le coût.",
+        new_contact: "Notre équipe commerciale peut vous aider.",
+        opt_whatsapp: "Parler sur WhatsApp",
+        opt_understood: "Compris",
+        budget_intro: "Parfait, faisons un devis rapide. Quel est le type de projet ?",
+        budget_segment: "Quel est votre secteur d'activité ?",
+        budget_ready: "Avez-vous des matériaux prêts (logo, textes) ?",
+        budget_deadline: "Avez-vous une idée du délai ?",
+        budget_value: "Quel est votre budget approximatif ?",
+        budget_low: "Notre travail personnalisé commence à 350€, mais contactez-nous sur WhatsApp.",
+        budget_final: "Merci ! Cliquez ci-dessous pour envoyer ce résumé sur notre WhatsApp.",
+        opt_send_wa: "Envoyer par WhatsApp",
+
+        // Budget Options
+        budget_opt_web: "Site Web",
+        budget_opt_landing: "Landing Page",
+        budget_opt_ecom: "E-Commerce",
+        budget_opt_redesign: "Refonte",
+        budget_seg_services: "Services",
+        budget_seg_commerce: "Commerce",
+        budget_seg_health: "Santé",
+        budget_seg_other: "Autre",
+
+        budget_ans_yes: "Oui",
+        budget_ans_no: "Non",
+        budget_time_1m: "1 mois",
+        budget_time_23m: "2-3 mois",
+        budget_time_norush: "Pas pressé",
+
+        budget_range_low: "350€ - 1.000€",
+        budget_range_mid: "1.000€ - 3.000€",
+        budget_range_high: "+ 3.000€",
+        budget_range_micro: "< 350€",
+
+        ask_name: "Avant de commencer, comment vous appelez-vous ?",
+        wa_template: "Bonjour, je m'appelle {name} et je souhaite un devis pour : {details}"
       }
     };
 
@@ -1686,7 +2042,7 @@
         msg: t("welcome"),
         options: [
           { text: t("opt_faq"), next: "faq_menu" },
-          { text: t("opt_budget"), next: "budget_type" },
+          { text: t("opt_budget"), next: "ask_name" }, // Go to name input first
           { text: t("opt_explore"), next: "explore" }
         ]
       },
@@ -1697,26 +2053,53 @@
           { text: t("opt_reset"), next: "welcome" }
         ]
       },
+      // --- ASK NAME ---
+      ask_name: {
+        msg: t("ask_name"),
+        input: true,
+        next: "budget_type"
+      },
       // --- FAQ FLOW ---
       faq_menu: {
         msg: t("faq_msg"),
         options: [
           { text: t("faq_opt_price"), next: "faq_price" },
           { text: t("faq_opt_deadline"), next: "faq_deadline" },
-          { text: t("faq_opt_support"), next: "faq_support_filter" },
-          { text: t("faq_opt_who"), next: "faq_target" }
+          { text: t("faq_opt_wp"), next: "faq_wp" },
+          { text: t("faq_opt_seo"), next: "faq_seo" },
+          { text: t("faq_opt_mobile"), next: "faq_mobile" },
+          { text: t("faq_opt_support"), next: "faq_support_info" }
         ]
       },
       faq_price: {
         msg: t("price_msg"),
         options: [
-          { text: t("opt_yes_budget"), next: "budget_type" },
+          { text: t("opt_yes_budget"), next: "ask_name" },
           { text: t("opt_back_faq"), next: "faq_menu" }
         ]
       },
       faq_deadline: {
         msg: t("deadline_msg"),
         options: [{ text: t("opt_back_faq"), next: "faq_menu" }]
+      },
+      faq_wp: {
+        msg: t("wp_msg"),
+        options: [{ text: t("opt_back_faq"), next: "faq_menu" }]
+      },
+      faq_seo: {
+        msg: t("seo_msg"),
+        options: [{ text: t("opt_back_faq"), next: "faq_menu" }]
+      },
+      faq_mobile: {
+        msg: t("mobile_msg"),
+        options: [{ text: t("opt_back_faq"), next: "faq_menu" }]
+      },
+      faq_support_info: {
+        msg: t("support_msg"),
+        options: [
+          { text: t("opt_yes_budget"), next: "ask_name" },
+          { text: t("opt_back_faq"), next: "faq_menu" }
+        ]
       },
       faq_target: {
         msg: t("target_msg"),
@@ -1762,47 +2145,47 @@
         msg: t("budget_intro"),
         storeKey: "Tipo",
         options: [
-          { text: "Website", next: "budget_segment" },
-          { text: "Landing Page", next: "budget_segment" },
-          { text: "E-Commerce", next: "budget_segment" },
-          { text: "Redesign", next: "budget_segment" }
+          { text: t("budget_opt_web"), next: "budget_segment" },
+          { text: t("budget_opt_landing"), next: "budget_segment" },
+          { text: t("budget_opt_ecom"), next: "budget_segment" },
+          { text: t("budget_opt_redesign"), next: "budget_segment" }
         ]
       },
       budget_segment: {
         msg: t("budget_segment"),
         storeKey: "Segmento",
         options: [
-          { text: "Services", next: "budget_ready" },
-          { text: "Commerce", next: "budget_ready" },
-          { text: "Health", next: "budget_ready" },
-          { text: "Other", next: "budget_ready" }
+          { text: t("budget_seg_services"), next: "budget_ready" },
+          { text: t("budget_seg_commerce"), next: "budget_ready" },
+          { text: t("budget_seg_health"), next: "budget_ready" },
+          { text: t("budget_seg_other"), next: "budget_ready" }
         ]
       },
       budget_ready: {
         msg: t("budget_ready"),
         storeKey: "Materiais",
         options: [
-          { text: "Sim / Yes", next: "budget_deadline" },
-          { text: "Não / No", next: "budget_deadline" }
+          { text: t("budget_ans_yes"), next: "budget_deadline" },
+          { text: t("budget_ans_no"), next: "budget_deadline" }
         ]
       },
       budget_deadline: {
         msg: t("budget_deadline"),
         storeKey: "Prazo",
         options: [
-          { text: "1 month", next: "budget_value" },
-          { text: "2-3 months", next: "budget_value" },
-          { text: "No rush", next: "budget_value" }
+          { text: t("budget_time_1m"), next: "budget_value" },
+          { text: t("budget_time_23m"), next: "budget_value" },
+          { text: t("budget_time_norush"), next: "budget_value" }
         ]
       },
       budget_value: {
         msg: t("budget_value"),
         storeKey: "Budget",
         options: [
-          { text: "400-1k", next: "budget_final" },
-          { text: "1k-3k", next: "budget_final" },
-          { text: "+3k", next: "budget_final" },
-          { text: "< 400", next: "budget_low" }
+          { text: t("budget_range_low"), next: "budget_final" },
+          { text: t("budget_range_mid"), next: "budget_final" },
+          { text: t("budget_range_high"), next: "budget_final" },
+          { text: t("budget_range_micro"), next: "budget_low" }
         ]
       },
       budget_low: {
@@ -1824,55 +2207,135 @@
       messagesEl.scrollTop = messagesEl.scrollHeight;
     };
 
-    const renderOptions = (opts) => {
-      optionsEl.innerHTML = "";
-      if (!opts) return;
-
-      opts.forEach(opt => {
-        const btn = document.createElement("button");
-        btn.className = "chatbot__optionBtn";
-        btn.textContent = opt.text;
-        btn.onclick = () => handleOptionClick(opt);
-        optionsEl.appendChild(btn);
-      });
-    };
-
-    const handleOptionClick = async (opt) => {
-      renderMessage(opt.text, "user");
+    const renderOptions = (options, inputMode = false) => {
       optionsEl.innerHTML = "";
 
-      // Get FRESH data for next step (in case language changed mid-flow, though unlikely)
-      const chatData = getChatData();
+      const form = document.getElementById("chat-input-form");
+      const input = document.getElementById("chat-input-text");
 
-      const currentStepObj = chatData[currentState];
-      if (currentStepObj && currentStepObj.storeKey) {
-        history.push(`${currentStepObj.storeKey}: ${opt.text}`);
-      }
-
-      if (opt.action) {
-        if (opt.action === "scroll_portfolio") {
-          document.querySelector("#portfolio")?.scrollIntoView({ behavior: "smooth" });
-        } else if (opt.action.startsWith("whatsapp")) {
-          const phone = "351925928900";
-          let text = "";
-          if (opt.action === "whatsapp_budget_send") {
-            const summary = history.join("\n");
-            text = `[Bot ${currentLang.toUpperCase()}] New Lead:\n\n${summary}`;
-          } else {
-            text = `[Bot ${currentLang.toUpperCase()}] Hello, I need help.`;
-          }
-          window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
+      if (inputMode) {
+        if (form) {
+          form.hidden = false;
+          input.value = "";
+          setTimeout(() => input.focus(), 100);
         }
         return;
       }
 
-      if (opt.next && chatData[opt.next]) {
-        currentState = opt.next;
-        const nextData = chatData[currentState];
-        await new Promise(r => setTimeout(r, 600));
-        renderMessage(nextData.msg, "bot");
-        renderOptions(nextData.options);
+      // Keep form hidden if not input mode
+      if (form) form.hidden = true;
+
+      if (!options) return;
+      options.forEach((opt) => {
+        const btn = document.createElement("button");
+        btn.className = "chatbot__opt";
+        btn.textContent = opt.text;
+        btn.onclick = () => handleOption(opt);
+        optionsEl.appendChild(btn);
+      });
+    };
+
+    const handleOption = (opt) => {
+      // User bubble
+      renderMessage(opt.text, "user");
+
+      // Store value if needed
+      const data = getChatData();
+      const stateObj = data[currentState];
+      if (stateObj && stateObj.storeKey) {
+        history.push({ key: stateObj.storeKey, value: opt.text });
       }
+
+      // Action?
+      if (opt.action) {
+        handleAction(opt.action);
+        return;
+      }
+
+      // Next state
+      if (opt.next) {
+        currentState = opt.next;
+        const nextData = data[currentState];
+        if (nextData) {
+          setTimeout(() => {
+            renderMessage(nextData.msg, "bot");
+            renderOptions(nextData.options, nextData.input); // Pass input flag
+          }, 400);
+        }
+      }
+    };
+
+    // INPUT FORM HANDLER
+    const form = document.getElementById("chat-input-form");
+    if (form) {
+      form.onsubmit = (e) => {
+        e.preventDefault();
+        const input = document.getElementById("chat-input-text");
+        const val = input.value.trim();
+        if (!val) return;
+
+        // Save name
+        history.push({ key: "Nome", value: val });
+
+        // Show as user message
+        renderMessage(val, "user");
+
+        // Move to next state (hardcoded logic based on flow: ask_name -> budget_type)
+        // We look up current state "ask_name" to find "next"
+        const data = getChatData();
+        const stateObj = data[currentState];
+
+        // Hide form
+        form.hidden = true;
+
+        if (stateObj && stateObj.next) {
+          currentState = stateObj.next;
+          const nextData = data[currentState];
+          if (nextData) {
+            setTimeout(() => {
+              renderMessage(nextData.msg, "bot");
+              renderOptions(nextData.options, nextData.input);
+            }, 500);
+          }
+        }
+      };
+    }
+
+    const handleAction = (action) => {
+      const phone = "351925928900";
+      if (action === "scroll_portfolio") {
+        document.querySelector("#portfolio")?.scrollIntoView({ behavior: "smooth" });
+        closeNav();
+      } else if (action === "whatsapp_support") {
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent("Olá, preciso de suporte técnico.")}`, "_blank");
+      } else if (action === "whatsapp_general") {
+        window.open(`https://wa.me/${phone}`, "_blank");
+      } else if (action === "whatsapp_budget") {
+        // Low budget
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent("Olá, tenho um orçamento reduzido (<400€) mas gostaria de conversar.")}`, "_blank");
+      } else if (action === "whatsapp_budget_send") {
+        // Compile history
+        // history = [{ key: "Nome", value: "..." }, {key: "Tipo", ...} ...]
+
+        // Extract name
+        const nameItem = history.find(h => h.key === "Nome");
+        const name = nameItem ? nameItem.value : "Cliente";
+
+        // Format details
+        const details = history
+          .filter(h => h.key !== "Nome")
+          .map((h) => `${h.key}: ${h.value}`)
+          .join("\n- ");
+
+        const template = t("wa_template");
+        const finalMsg = template.replace("{name}", name).replace("{details}", `\n- ${details}`);
+
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(finalMsg)}`, "_blank");
+      }
+
+      // Reset after action? Or just leave it open. 
+      // Let's scroll to bottom
+      messagesEl.scrollTop = messagesEl.scrollHeight;
     };
 
     // --- TOGGLE LOGIC ---
@@ -1905,6 +2368,7 @@
       // Clear chat and restart with new language
       messagesEl.innerHTML = "";
       optionsEl.innerHTML = "";
+      history = []; // Reset history
       currentState = "welcome";
 
       // If open, re-render immediately
@@ -1920,9 +2384,15 @@
   // Setup extras
   setupReveal();
   setupFaq();
-  setupForm();
+  // setupForm(); // Removed
   setupBackToTop();
   setLoadedFlag();
+  // Safe init for dynamic link
+  try {
+    updateWhatsAppLink();
+  } catch (e) {
+    console.error("Init WhatsApp link failed", e);
+  }
   initChatbot();
 
   // NOTE: serviços (#servicos) layout is controlled via CSS (.services__grid) to match screenshot.

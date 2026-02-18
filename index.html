@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
     content="Webmari.pt — Desenvolvimento Web e SEO em Portugal. Criamos sites de alta performance, compatíveis com RGPD e otimizados para o mercado europeu e global." />
   <meta property="og:title" content="Webmari.pt — Web Design & SEO | Portugal & Europa" />
@@ -14,12 +14,26 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <title>Webmari.pt — Web Design & SEO | Portugal & Europa</title>
-  <link rel="stylesheet" href="./styles.css?v=3" />
+  <link rel="stylesheet" href="./styles.css?v=4" />
+  <!-- DNS prefetch for external services -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://wa.me">
+  <link rel="dns-prefetch" href="https://instagram.com">
+  <!-- Preconnect for fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preload logo (LCP element) -->
+  <link rel="preload" href="./logo.png" as="image" fetchpriority="high">
+  <!-- Google Fonts: non-render-blocking -->
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+  </noscript>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -51,7 +65,7 @@
       <a class="brand" href="#top" aria-label="Webmari.pt Home">
         <img class="brand__logo" src="./logo.png" data-logo-light="./logo.png" data-logo-dark="./logo-dark.png"
           data-logo-mobile-light="./logo-mobile-light.png" data-logo-mobile-dark="./logo-mobile-dark.png"
-          alt="Webmari.pt" width="180" height="40" />
+          alt="Webmari.pt" width="180" height="40" fetchpriority="high" />
       </a>
 
       <!-- CENTER: nav -->
@@ -119,6 +133,7 @@
             <button class="menu__item" role="menuitem" type="button" data-lang="en">English (EN)</button>
             <button class="menu__item" role="menuitem" type="button" data-lang="es">Español (ES)</button>
             <button class="menu__item" role="menuitem" type="button" data-lang="de">Deutsch (DE)</button>
+            <button class="menu__item" role="menuitem" type="button" data-lang="fr">Français (FR)</button>
             <button class="menu__item" role="menuitem" type="button" data-lang="zh">中文 (ZH)</button>
           </div>
         </div>
@@ -133,7 +148,7 @@
   <main id="main">
     <!-- CHANGED: hero now matches screenshot -->
     <section id="top" class="hero hero--screenshot">
-      <div class="container hero__wrap reveal">
+      <div class="container hero__wrap">
         <div class="hero__pill" data-i18n="hero.pill">Desenvolvimento Web Premium</div>
         <h1 class="hero__title">
           <span class="block" data-i18n="hero.h1.a">Presença Digital</span>
@@ -341,7 +356,7 @@
           <a class="project" href="https://burguerpt.netlify.app/" target="_blank" rel="noopener noreferrer"
             aria-label="Project 1" style="opacity: 1; transform: none;">
             <div class="project__thumb">
-              <img src="./burguer.png.png?v=2" alt="Projeto Burguer - Landing Page"
+              <img src="./burguer.png.png?v=2" alt="Projeto Burguer - Landing Page" loading="lazy"
                 style="width: 100%; height: 100%; object-fit: cover;" width="600" height="400" />
             </div>
             <div class="project__meta">
@@ -353,7 +368,7 @@
           <a class="project" href="https://pvcarpt.netlify.app/" target="_blank" rel="noopener noreferrer"
             aria-label="Project 2" style="opacity: 1; transform: none;">
             <div class="project__thumb">
-              <img src="./pvcar.png.png" alt="Projeto PV Car" width="600" height="400" />
+              <img src="./pvcar.png.png" alt="Projeto PV Car" loading="lazy" width="600" height="400" />
             </div>
             <div class="project__meta">
               <span class="project__tag" data-i18n="portfolio.tag2">Corporate</span>
@@ -363,17 +378,17 @@
           <a class="project" href="https://seguidorexpress.netlify.app/" target="_blank" rel="noopener noreferrer"
             aria-label="Project 3" style="opacity: 1; transform: none;">
             <div class="project__thumb">
-              <img src="./seguidor.png.png" alt="Projeto Seguidor Express" width="600" height="400" />
+              <img src="./seguidor.png.png" alt="Projeto Seguidor Express" loading="lazy" width="600" height="400" />
             </div>
             <div class="project__meta">
               <span class="project__tag" data-i18n="portfolio.tag3">UI</span>
               <span class="project__name" data-i18n="portfolio.p3">Projeto Nova</span>
             </div>
           </a>
-          <a class="project" href="https://dreamstravelpt.netlify.app/" target="_blank" rel="noopener noreferrer"
+          <a class="project" href="https://etransfers.pt/" target="_blank" rel="noopener noreferrer"
             aria-label="Project 4" style="opacity: 1; transform: none;">
             <div class="project__thumb">
-              <img src="./dreams.png.png" alt="Projeto Dreams Travel" width="600" height="400" />
+              <img src="./etransferspt.png" alt="Projeto Etransfers" loading="lazy" width="600" height="400" />
             </div>
             <div class="project__meta">
               <span class="project__tag" data-i18n="portfolio.tag4">SEO</span>
@@ -383,7 +398,7 @@
           <a class="project" href="https://remodelacao.pt/?lang=pt" target="_blank" rel="noopener noreferrer"
             aria-label="Project 5" style="opacity: 1; transform: none;">
             <div class="project__thumb">
-              <img src="./remodelacao.png.png" alt="Projeto Remodelação" width="600" height="400" />
+              <img src="./remodelacao.png.png" alt="Projeto Remodelação" loading="lazy" width="600" height="400" />
             </div>
             <div class="project__meta">
               <span class="project__tag" data-i18n="portfolio.tag5">Mobile</span>
@@ -393,7 +408,7 @@
           <a class="project" href="https://imobiliariapt.netlify.app/" target="_blank" rel="noopener noreferrer"
             aria-label="Project 6" style="opacity: 1; transform: none;">
             <div class="project__thumb">
-              <img src="./imobiliaria.png.png" alt="Projeto Imobiliária" width="600" height="400" />
+              <img src="./imobiliaria.png.png" alt="Projeto Imobiliária" loading="lazy" width="600" height="400" />
             </div>
             <div class="project__meta">
               <span class="project__tag" data-i18n="portfolio.tag6">One-page</span>
@@ -504,44 +519,7 @@
             </div>
           </div>
 
-          <form class="form reveal" data-contact-form>
-            <div class="form__row">
-              <label class="field">
-                <span class="field__label" data-i18n="form.name">Nome</span>
-                <input name="name" autocomplete="name" required placeholder="Maria" />
-              </label>
-              <label class="field">
-                <span class="field__label" data-i18n="form.email">Email</span>
-                <input name="email" type="email" autocomplete="email" required placeholder="maria@email.com" />
-              </label>
-            </div>
-
-            <div class="form__row">
-              <label class="field">
-                <span class="field__label" data-i18n="form.phone">Telefone (opcional)</span>
-                <input name="phone" autocomplete="tel" placeholder="+351 ..." />
-              </label>
-              <label class="field">
-                <span class="field__label" data-i18n="form.service">Serviço</span>
-                <select name="service" required>
-                  <option value="" selected disabled data-i18n="form.servicePh">Escolher...</option>
-                  <option value="onepage" data-i18n="form.service1">Website One-Page</option>
-                  <option value="redesign" data-i18n="form.service2">Redesign</option>
-                  <option value="seo" data-i18n="form.service3">SEO & Performance</option>
-                </select>
-              </label>
-            </div>
-
-            <label class="field">
-              <span class="field__label" data-i18n="form.message">Mensagem</span>
-              <textarea name="message" rows="5" required placeholder="Conte-nos sobre o seu projeto..."></textarea>
-            </label>
-
-            <div class="form__actions">
-              <button class="btn btn--primary" type="submit" data-i18n="form.submit">Enviar</button>
-              <p class="form__note" role="status" aria-live="polite" data-form-status></p>
-            </div>
-          </form>
+          <!-- Form removed as requested -->
         </div>
       </div>
     </section>
@@ -554,9 +532,11 @@
         </div>
 
         <div class="faq reveal" data-faq>
-          <details class="faq__item">
-            <summary data-i18n="faqs.q1">Quanto tempo demora?</summary>
-            <p data-i18n="faqs.a1">Depende do conteúdo, mas um site One-Page geralmente fica pronto em poucos dias.</p>
+          <details class="faq__item" open>
+            <summary data-i18n="faqs.q1">Quanto custa criar um site profissional em Portugal?</summary>
+            <p data-i18n="faqs.a1">O preço depende da complexidade e das funcionalidades pretendidas. Um site One-Page
+              começa a partir de 350€, enquanto projetos mais completos com SEO avançado e sistema multilingue podem
+              variar entre 600€ e 1500€. Oferecemos sempre orçamento transparente e sem surpresas.</p>
           </details>
           <details class="faq__item">
             <summary data-i18n="faqs.q2">É otimizado para mobile?</summary>
@@ -569,6 +549,35 @@
           <details class="faq__item">
             <summary data-i18n="faqs.q4">Inclui domínio e alojamento?</summary>
             <p data-i18n="faqs.a4">Podemos ajudar na configuração ou gerir tudo por si (opcional).</p>
+          </details>
+          <details class="faq__item">
+            <summary data-i18n="faqs.q5">Qual é a diferença entre sites WordPress e Código Personalizado?</summary>
+            <p data-i18n="faqs.a5">O código personalizado é mais rápido, seguro e melhor para o SEO do que o WordPress.
+            </p>
+          </details>
+          <details class="faq__item">
+            <summary data-i18n="faqs.q6">Quanto custa um website?</summary>
+            <p data-i18n="faqs.a6">Os preços variam conforme a complexidade, mas oferecemos orçamentos transparentes.
+            </p>
+          </details>
+          <details class="faq__item">
+            <summary data-i18n="faqs.q7">Oferecem suporte e manutenção?</summary>
+            <p data-i18n="faqs.a7">Sim, temos pacotes de manutenção para garantir que o seu site está sempre atualizado.
+            </p>
+          </details>
+          <details class="faq__item">
+            <summary data-i18n="faqs.q8">Como funciona o pagamento?</summary>
+            <p data-i18n="faqs.a8">Geralmente, pedimos 50% no início e os restantes 50% na entrega final.</p>
+          </details>
+          <details class="faq__item">
+            <summary data-i18n="faqs.q9">Posso ter o site em vários idiomas?</summary>
+            <p data-i18n="faqs.a9">Sim, somos especialistas em sites multilingue rápidos e otimizados para SEO
+              internacional.</p>
+          </details>
+          <details class="faq__item">
+            <summary data-i18n="faqs.q10">O site vai aparecer no Google?</summary>
+            <p data-i18n="faqs.a10">Sim! Todos os nossos sites são construídos com as melhores práticas de SEO técnico.
+            </p>
           </details>
         </div>
       </div>
@@ -694,6 +703,14 @@
 
       <div class="chatbot__input">
         <div id="chat-options" class="chatbot__options"></div>
+        <form id="chat-input-form" class="chatbot__form" hidden>
+          <input type="text" id="chat-input-text" placeholder="Nome..." required />
+          <button type="submit" aria-label="Enviar">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+            </svg>
+          </button>
+        </form>
       </div>
     </div>
 
