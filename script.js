@@ -2583,10 +2583,18 @@
 
     // Get stored or default
     let currentTheme = localStorage.getItem(themeKey) || "light";
+    let prevIsMobile = window.innerWidth <= 768;
 
     // Logo switcher logic
-    const updateLogos = (theme) => {
+    const updateLogos = (theme, force = false) => {
       const isMobile = window.innerWidth <= 768;
+
+      // If not forced (theme change) AND layout stricture hasn't changed, DO NOTHING.
+      // This prevents scroll-induced resize events on mobile from touching DOM.
+      if (!force && isMobile === prevIsMobile) return;
+
+      prevIsMobile = isMobile;
+
       const logos = $$("img[data-logo-light]");
 
       logos.forEach(img => {
@@ -2600,8 +2608,7 @@
 
         if (lightSrc && darkSrc) {
           const newSrc = theme === "light" ? lightSrc : darkSrc;
-          // Fix: compare attribute to attribute to handle relative paths correctly
-          // img.src returns absolute URL, newSrc is relative "./..."
+          // Attribute check for extra safety
           if (img.getAttribute("src") !== newSrc) {
             img.setAttribute("src", newSrc);
           }
@@ -2618,15 +2625,15 @@
         btn.setAttribute("aria-checked", t === "dark" ? "true" : "false");
       });
 
-      updateLogos(t);
+      updateLogos(t, true); // Force update on theme change
     };
 
-    // Debounced resize listener so logos don't flicker
+    // Debounced resize listener
     let resizeTimer;
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        updateLogos(currentTheme);
+        updateLogos(currentTheme, false); // Not forced, respects isMobile check
       }, 100);
     });
 
