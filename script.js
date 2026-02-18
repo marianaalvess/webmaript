@@ -2576,7 +2576,6 @@
   // --- THEME ---
   const initTheme = () => {
     const toggleBtn = $("[data-theme-toggle]");
-    // Also support the nav button if it exists separately
     const toggles = $$("[data-theme-toggle]");
 
     const html = document.documentElement;
@@ -2584,6 +2583,27 @@
 
     // Get stored or default
     let currentTheme = localStorage.getItem(themeKey) || "light";
+
+    // Logo switcher logic
+    const updateLogos = (theme) => {
+      const isMobile = window.innerWidth <= 768;
+      const logos = $$("img[data-logo-light]");
+
+      logos.forEach(img => {
+        const lightSrc = isMobile
+          ? (img.getAttribute("data-logo-mobile-light") || img.getAttribute("data-logo-light"))
+          : img.getAttribute("data-logo-light");
+
+        const darkSrc = isMobile
+          ? (img.getAttribute("data-logo-mobile-dark") || img.getAttribute("data-logo-dark"))
+          : img.getAttribute("data-logo-dark");
+
+        if (lightSrc && darkSrc) {
+          const newSrc = theme === "light" ? lightSrc : darkSrc;
+          if (img.src !== newSrc) img.src = newSrc;
+        }
+      });
+    };
 
     // Updates UI
     const applyTheme = (t) => {
@@ -2594,55 +2614,16 @@
         btn.setAttribute("aria-checked", t === "dark" ? "true" : "false");
       });
 
-      // Logo switcher logic
-      const updateLogos = () => {
-        const isMobile = window.innerWidth <= 768;
-        const logos = $$("img[data-logo-light]");
-
-        logos.forEach(img => {
-          const lightSrc = isMobile
-            ? (img.getAttribute("data-logo-mobile-light") || img.getAttribute("data-logo-light"))
-            : img.getAttribute("data-logo-light");
-
-          const darkSrc = isMobile
-            ? (img.getAttribute("data-logo-mobile-dark") || img.getAttribute("data-logo-dark"))
-            : img.getAttribute("data-logo-dark");
-
-          if (lightSrc && darkSrc) {
-            const newSrc = t === "light" ? lightSrc : darkSrc;
-            if (img.src !== newSrc) img.src = newSrc;
-          }
-        });
-      };
-
-      updateLogos();
-      // Also update on resize to switch mobile/desktop versions
-      window.removeEventListener("resize", updateLogos); // prevent duplicates? logic inside closure is tricky
-      // Cleaner: just run now. If user resizes, they might see wrong logo size variant but color is correct.
-      // But let's add a simple resize listener that only runs if theme is set
-      // Actually, creating a new listener every time applyTheme runs is bad.
-      // Let's NOT add resize listener here. Just update on toggle.
-      // If user resizes window significantly, they can refresh.
+      updateLogos(t);
     };
 
-    // Global resize listener for logo responsive switch
+    // Debounced resize listener so logos don't flicker
+    let resizeTimer;
     window.addEventListener("resize", () => {
-      // Re-run logic with current theme
-      const isMobile = window.innerWidth <= 768;
-      const logos = $$("img[data-logo-light]");
-      logos.forEach(img => {
-        const lightSrc = isMobile
-          ? (img.getAttribute("data-logo-mobile-light") || img.getAttribute("data-logo-light"))
-          : img.getAttribute("data-logo-light");
-        const darkSrc = isMobile
-          ? (img.getAttribute("data-logo-mobile-dark") || img.getAttribute("data-logo-dark"))
-          : img.getAttribute("data-logo-dark");
-
-        if (lightSrc && darkSrc) {
-          const newSrc = currentTheme === "light" ? lightSrc : darkSrc;
-          if (img.src !== newSrc) img.src = newSrc;
-        }
-      });
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        updateLogos(currentTheme);
+      }, 100);
     });
 
     // Initial apply

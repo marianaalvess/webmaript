@@ -4151,3 +4151,33 @@ html[data-theme="light"] .spinner {
     display: none;
   }
 }
+
+/* === LIGHT MODE FIXES (Recover Invisible Elements) === */
+
+/* Fix Hero Card visibility in light mode */
+html[data-theme="light"] .hero__card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  /* Soft shadow since bg is white */
+}
+
+/* Fix KPI cards visibility */
+html[data-theme="light"] .kpi {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Fix Alternate Section container visibility */
+html[data-theme="light"] .section--alt>.container {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Fix Form visibility (most critical) */
+html[data-theme="light"] .form {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
