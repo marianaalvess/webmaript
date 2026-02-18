@@ -184,10 +184,11 @@
         </ul>
       `,
 
-      "cookies.title": "Cookies 🍪",
-      "cookies.text": "Utilizamos cookies para melhorar a sua experiência. Ao continuar a navegar, aceita a nossa política de privacidade.",
-      "cookies.accept": "Aceitar",
-      "cookies.decline": "Recusar",
+
+      "exit.title": "Espere! Ainda tem dúvidas?",
+      "exit.text": "Fale connosco antes de ir embora. Estamos online para ajudar.",
+      "exit.whatsapp": "WhatsApp",
+      "exit.chat": "Abrir Chat",
     },
 
     en: {
@@ -361,10 +362,6 @@
         </ul>
       `,
 
-      "cookies.title": "Cookies 🍪",
-      "cookies.text": "We use cookies to improve your experience. By continuing to browse, you accept our privacy policy.",
-      "cookies.accept": "Accept",
-      "cookies.decline": "Decline",
 
       "hero.pill": "Professional Web Development",
       "hero.h1.a": "Fast websites that generate",
@@ -376,6 +373,11 @@
       "hero.chip2": "Security",
       "hero.chip3": "SEO",
       "hero.chip4": "Multilingual",
+
+      "exit.title": "Wait! Any questions?",
+      "exit.text": "Talk to us before you go. We are online to help.",
+      "exit.whatsapp": "WhatsApp",
+      "exit.chat": "Open Chat",
     },
 
     es: {
@@ -549,10 +551,6 @@
         </ul>
       `,
 
-      "cookies.title": "Cookies 🍪",
-      "cookies.text": "Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra política de privacidad.",
-      "cookies.accept": "Aceptar",
-      "cookies.decline": "Rechazar",
 
       "hero.pill": "Desarrollo Web Profesional",
       "hero.h1.a": "Webs rápidas que generan",
@@ -564,6 +562,11 @@
       "hero.chip2": "Segurança",
       "hero.chip3": "SEO",
       "hero.chip4": "Multilingüe",
+
+      "exit.title": "¡Espera! ¿Tienes dudas?",
+      "exit.text": "Habla con nosotros antes de irte. Estamos en línea para ayudar.",
+      "exit.whatsapp": "WhatsApp",
+      "exit.chat": "Abrir Chat",
     },
 
     de: {
@@ -737,10 +740,6 @@
         </ul>
       `,
 
-      "cookies.title": "Cookies 🍪",
-      "cookies.text": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Durch die weitere Nutzung stimmen Sie unserer Datenschutzerklärung zu.",
-      "cookies.accept": "Akzeptieren",
-      "cookies.decline": "Ablehnen",
 
       "hero.pill": "Professionelle Webentwicklung",
       "hero.h1.a": "Schnelle Websites, die",
@@ -752,6 +751,11 @@
       "hero.chip2": "Sicherheit",
       "hero.chip3": "SEO",
       "hero.chip4": "Mehrsprachig",
+
+      "exit.title": "Warten Sie! Haben Sie Fragen?",
+      "exit.text": "Sprechen Sie mit uns, bevor Sie gehen. Wir sind online, um zu helfen.",
+      "exit.whatsapp": "WhatsApp",
+      "exit.chat": "Chat öffnen",
     },
 
     zh: {
@@ -925,10 +929,6 @@
         </ul>
       `,
 
-      "cookies.title": "Cookies 🍪",
-      "cookies.text": "我们使用 Cookie 以改善您的体验。继续浏览即表示您接受我们的隐私政策。",
-      "cookies.accept": "接受",
-      "cookies.decline": "拒绝",
 
       "hero.pill": "专业网站开发",
       "hero.h1.a": "快速网站，带来",
@@ -940,6 +940,11 @@
       "hero.chip2": "安全",
       "hero.chip3": "SEO",
       "hero.chip4": "多语言",
+
+      "exit.title": "等一下！还有疑问吗？",
+      "exit.text": "离开前和我们聊聊吧。我们要线为您提供帮助。",
+      "exit.whatsapp": "WhatsApp",
+      "exit.chat": "打开聊天",
     },
 
     // Optional: only needed if your UI actually switches to "fr"
@@ -1111,10 +1116,11 @@
         </ul>
       `,
 
-      "cookies.title": "Cookies 🍪",
-      "cookies.text": "Nous utilisons des cookies pour améliorer votre expérience. En continuant à naviguer, vous acceptez notre politique de confidentialité.",
-      "cookies.accept": "Accepter",
-      "cookies.decline": "Refuser",
+
+      "exit.title": "Attendez ! Des questions ?",
+      "exit.text": "Parlez-nous avant de partir. Nous sommes en ligne pour vous aider.",
+      "exit.whatsapp": "WhatsApp",
+      "exit.chat": "Ouvrir le Chat",
     },
   };
 
@@ -1245,37 +1251,7 @@
   const header = $(".header");
 
   // NEW: keep CSS --header-h in sync with actual header height (fixed header spacing)
-  // NEW: cookie banner logic
-  const initCookieBanner = () => {
-    const banner = $("#cookie-banner");
-    const acceptBtn = $("#cookie-accept");
-    const declineBtn = $("#cookie-decline");
 
-    if (!banner || !acceptBtn || !declineBtn) return;
-
-    // Check if choice already made
-    const consent = localStorage.getItem("webmari.consent");
-    if (!consent) {
-      // Show with slight delay
-      setTimeout(() => {
-        banner.setAttribute("data-open", "true");
-        banner.hidden = false;
-      }, 2000);
-    }
-
-    acceptBtn.addEventListener("click", () => {
-      localStorage.setItem("webmari.consent", "accepted");
-      banner.setAttribute("data-open", "false");
-      setTimeout(() => banner.hidden = true, 400);
-      // Here you would init analytics
-    });
-
-    declineBtn.addEventListener("click", () => {
-      localStorage.setItem("webmari.consent", "declined");
-      banner.setAttribute("data-open", "false");
-      setTimeout(() => banner.hidden = true, 400);
-    });
-  };
 
   const syncHeaderHeightVar = () => {
     if (!header) return;
@@ -1464,7 +1440,7 @@
 
   // ADD: diagnostics overlay (only activates on errors)
   installClientErrorOverlay();
-  initCookieBanner(); // Initialize cookie banner
+
 
   // NEW: hard reset interactive menus on load (prevents stuck states)
   closeNav();
@@ -1632,6 +1608,7 @@
     const closeBtn = document.querySelector(".chatbot__close");
     const messagesEl = document.getElementById("chat-messages");
     const optionsEl = document.getElementById("chat-options");
+    const inputEl = document.getElementById("chat-input-text"); // NEW: Select input
 
     if (!chatbot || !toggleBtn) return;
 
@@ -1642,6 +1619,7 @@
     // --- TRANSLATIONS ---
     const chatI18n = {
       pt: {
+        input_placeholder: "Nome...",
         welcome: "Olá! Sou o assistente virtual da Webmari. Você quer tirar uma dúvida rápida ou pedir um orçamento para um projeto?",
         opt_faq: "Tirar uma dúvida",
         opt_budget: "Pedir orçamento",
@@ -1712,6 +1690,7 @@
         wa_template: "Olá, chamo-me {name} e gostaria de um orçamento para: {details}"
       },
       en: {
+        input_placeholder: "Name...",
         welcome: "Hello! I'm Webmari's virtual assistant. Do you want to ask a quick question or request a quote?",
         opt_faq: "Ask a question",
         opt_budget: "Request a quote",
@@ -1776,6 +1755,7 @@
         wa_template: "Hello, my name is {name} and I would like a quote for: {details}"
       },
       es: {
+        input_placeholder: "Nombre...",
         welcome: "¡Hola! Soy el asistente virtual de Webmari. ¿Quieres hacer una pregunta o pedir un presupuesto?",
         opt_faq: "Hacer una pregunta",
         opt_budget: "Pedir presupuesto",
@@ -1840,6 +1820,7 @@
         wa_template: "Hola, me llamo {name} y me gustaría un presupuesto para: {details}"
       },
       de: {
+        input_placeholder: "Name...",
         welcome: "Hallo! Ich bin der virtuelle Assistent von Webmari. Möchten Sie eine Frage stellen oder ein Angebot anfordern?",
         opt_faq: "Frage stellen",
         opt_budget: "Angebot anfordern",
@@ -1904,6 +1885,7 @@
         wa_template: "Hallo, ich heiße {name} und hätte gerne ein Angebot für: {details}"
       },
       zh: {
+        input_placeholder: "姓名...",
         welcome: "你好！我是 Webmari 的虚拟助手。你想快速咨询还是询价？",
         opt_faq: "咨询问题",
         opt_budget: "请求报价",
@@ -1968,6 +1950,7 @@
         wa_template: "您好，我叫 {name}，我想询价：{details}"
       },
       fr: {
+        input_placeholder: "Nom...",
         welcome: "Bonjour ! Je suis l'assistant virtuel de Webmari. Vous souhaitez poser une question rapide ou demander un devis pour un projet ?",
         opt_faq: "Poser une question",
         opt_budget: "Demander un devis",
@@ -2047,6 +2030,7 @@
 
     // --- CHAT DATA GENERATOR ---
     const getChatData = () => ({
+      input_placeholder: t("input_placeholder"),
       welcome: {
         msg: t("welcome"),
         options: [
@@ -2380,13 +2364,23 @@
       history = []; // Reset history
       currentState = "welcome";
 
+      // Update placeholder for new language (ALWAYS)
+      const d = getChatData();
+      if (inputEl && d.input_placeholder) inputEl.placeholder = d.input_placeholder;
+
       // If open, re-render immediately
       if (isOpen) {
-        const d = getChatData();
         renderMessage(d.welcome.msg, "bot");
         renderOptions(d.welcome.options);
       }
     });
+
+    // Helper to get data
+    // Initial placeholder set
+    if (inputEl) {
+      const initialD = getChatData();
+      if (initialD && initialD.input_placeholder) inputEl.placeholder = initialD.input_placeholder;
+    }
   };
 
 
@@ -2405,4 +2399,179 @@
   initChatbot();
 
   // NOTE: serviços (#servicos) layout is controlled via CSS (.services__grid) to match screenshot.
+
+  // --- PORTFOLIO VIRTUAL WINDOW LOGIC ---
+  const initPortfolioModal = () => {
+    const modal = $("#portfolio-modal");
+    if (!modal) return;
+
+    const iframe = $("#portfolio-iframe");
+    const iframeWrapper = $("#iframe-wrapper");
+    const loader = $(".portfolio-loader");
+    const externalLink = $("#portfolio-external-link");
+    const closeBtns = $$("[data-close-portfolio]");
+
+    // Device controls
+    const btnDesktop = $("#view-desktop");
+    const btnMobile = $("#view-mobile");
+
+    // Open Modal
+    const openModal = (url) => {
+      // Reset to desktop view by default
+      if (iframeWrapper) {
+        iframeWrapper.className = "iframe-wrapper iframe-wrapper--desktop";
+        btnDesktop?.classList.add("active");
+        btnMobile?.classList.remove("active");
+      }
+
+      // Show loader
+      if (loader) loader.hidden = false;
+
+      // Set src
+      if (iframe) {
+        iframe.onload = () => {
+          if (loader) loader.hidden = true;
+        };
+        iframe.src = url;
+      }
+
+      // Update external link
+      if (externalLink) externalLink.href = url;
+
+      // Show modal
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden"; // Prevent background scroll
+    };
+
+    // Close Modal
+    const closeModal = () => {
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+
+      // Clear src to stop video/audio and save memory
+      setTimeout(() => {
+        if (iframe) iframe.src = "";
+      }, 300);
+    };
+
+    // Bind Click Events on Project Cards
+    $$(".project").forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const url = link.href;
+        if (url) openModal(url);
+      });
+    });
+
+    // Bind Close Events
+    closeBtns.forEach(btn => btn.addEventListener("click", closeModal));
+
+    // Close on Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") {
+        closeModal();
+      }
+    });
+
+    // Device Switching Logic
+    if (btnDesktop && btnMobile && iframeWrapper) {
+      btnDesktop.addEventListener("click", () => {
+        iframeWrapper.className = "iframe-wrapper iframe-wrapper--desktop";
+        btnDesktop.classList.add("active");
+        btnMobile.classList.remove("active");
+      });
+
+      btnMobile.addEventListener("click", () => {
+        iframeWrapper.className = "iframe-wrapper iframe-wrapper--mobile";
+        btnMobile.classList.add("active");
+        btnDesktop.classList.remove("active");
+      });
+    }
+  };
+
+  initPortfolioModal();
+
+  // --- EXIT INTENT LOGIC ---
+  const initExitIntent = () => {
+    const popup = $("#exit-popup");
+    if (!popup) return;
+
+    // Check if already shown (using localStorage for persistence)
+    if (localStorage.getItem("webmari.exit_shown")) return;
+
+    const showPopup = () => {
+      // Double-check persistence to prevent re-triggering in same session
+      if (localStorage.getItem("webmari.exit_shown")) return;
+
+      popup.classList.add("is-visible");
+      popup.setAttribute("aria-hidden", "false");
+      localStorage.setItem("webmari.exit_shown", "true");
+    };
+
+    const closePopup = () => {
+      popup.classList.remove("is-visible");
+      popup.setAttribute("aria-hidden", "true");
+    };
+
+    // Trigger 1: Mouse leaves window (Desktop)
+    document.addEventListener("mouseleave", (e) => {
+      if (e.clientY <= 0) {
+        showPopup();
+      }
+    });
+
+    // Trigger 2: beforeunload (Stricter exit prevention)
+    window.addEventListener("beforeunload", (e) => {
+      // If we haven't shown the popup yet, try to block exit
+      if (localStorage.getItem("webmari.exit_shown")) return;
+
+      // Standard way to trigger native dialog
+      e.preventDefault();
+      e.returnValue = "";
+
+      // If user cancels (stays), show our popup immediately
+      setTimeout(() => {
+        showPopup();
+      }, 100);
+
+      return "";
+    });
+
+    // Trigger 3: Mobile/Tablet Timer Fallback (45s)
+    // Only if screen width is like mobile/tablet (< 1024px)
+    if (window.innerWidth < 1024) {
+      setTimeout(() => {
+        // Only show if user hasn't scrolled much (maybe reading?) or just straightforward timer
+        // Simplified: just timer
+        if (!localStorage.getItem("webmari.exit_shown")) {
+          showPopup();
+        }
+      }, 45000);
+    }
+
+    // Close on X btn, Overlay click, or Chat btn
+    $$("[data-exit-close]", popup).forEach(btn => {
+      btn.addEventListener("click", closePopup);
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && popup.classList.contains("is-visible")) {
+        closePopup();
+      }
+    });
+
+    // Chatbot Trigger in popup
+    const exitChatBtn = $("#exit-chat-btn");
+    if (exitChatBtn) {
+      exitChatBtn.addEventListener("click", () => {
+        closePopup();
+        // Toggle chatbot open
+        const toggleBtn = $("#chat-toggle");
+        if (toggleBtn) toggleBtn.click();
+      });
+    }
+  };
+
+  initExitIntent();
 })();

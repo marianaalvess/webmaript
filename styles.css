@@ -3699,80 +3699,7 @@ html[data-theme="light"] #depoimentos.section--alt {
   color: var(--primary);
 }
 
-/* === COOKIE BANNER === */
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  padding: 1.5rem 0;
-  background: color-mix(in srgb, var(--card) 90%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid var(--line);
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
-  transform: translateY(100%);
-  transition: transform 0.4s var(--ease);
-  display: none;
-}
 
-.cookie-banner[data-open="true"] {
-  transform: translateY(0);
-  display: block;
-}
-
-.cookie-banner__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.cookie-banner__content {
-  flex: 1;
-  min-width: 300px;
-}
-
-.cookie-banner__title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin: 0 0 0.5rem;
-  color: var(--text);
-}
-
-.cookie-banner__text {
-  font-size: 0.95rem;
-  color: var(--muted);
-  margin: 0;
-  line-height: 1.5;
-}
-
-.cookie-banner__actions {
-  display: flex;
-  gap: 1rem;
-}
-
-.btn--sm {
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-}
-
-@media (max-width: 768px) {
-  .cookie-banner__inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    padding-right: 80px;
-    /* Reserve space for chatbot button */
-  }
-
-  .cookie-banner__actions {
-    width: 100%;
-    justify-content: flex-start;
-  }
-}
 
 /* Fix for stats card border radius on mobile */
 #sobre .about__panelTop {
@@ -3851,3 +3778,362 @@ html[data-theme="light"] #depoimentos.section--alt {
   font-size: 0.95rem;
 }
 
+
+/* --- EXIT INTENT POPUP --- */
+.exit-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease);
+}
+
+.exit-popup.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.exit-popup__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 16, 32, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.exit-popup__card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: 24px;
+  padding: 2.5rem;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  transform: translateY(20px);
+  transition: transform 0.4s var(--ease);
+}
+
+.exit-popup.is-visible .exit-popup__card {
+  transform: translateY(0);
+}
+
+.exit-popup__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background 0.2s var(--ease), color 0.2s;
+}
+
+.exit-popup__close:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
+html[data-theme="light"] .exit-popup__close:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.exit-popup__icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: wave 2s infinite;
+  display: inline-block;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(14deg);
+  }
+
+  20% {
+    transform: rotate(-8deg);
+  }
+
+  30% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.exit-popup__title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.exit-popup__text {
+  color: var(--muted);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.exit-popup__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn--whatsapp-popup {
+  background: #25D366;
+  color: #fff;
+  border: 1px solid #25D366;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn--whatsapp-popup:hover {
+  background: #20BD5A;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .exit-popup__card {
+    padding: 2rem 1.5rem;
+  }
+
+  .exit-popup__actions {
+    flex-direction: column;
+  }
+
+  .exit-popup__title {
+    font-size: 1.5rem;
+  }
+}
+
+/* --- PORTFOLIO VIRTUAL WINDOW --- */
+.portfolio-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  /* Higher than exit popup */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease);
+}
+
+.portfolio-modal[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.portfolio-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 16, 32, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.portfolio-modal__content {
+  position: relative;
+  width: 95%;
+  height: 95%;
+  max-width: 1400px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.95);
+  transition: transform 0.4s var(--ease);
+}
+
+.portfolio-modal[aria-hidden="false"] .portfolio-modal__content {
+  transform: scale(1);
+}
+
+.portfolio-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--card);
+}
+
+.portfolio-modal__controls,
+.portfolio-modal__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-icon {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--muted);
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.btn-icon:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
+.btn-icon.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+html[data-theme="light"] .btn-icon:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.portfolio-modal__body {
+  flex: 1;
+  position: relative;
+  background: #f0f0f0;
+  /* Neutral bg for iframe context */
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+html[data-theme="dark"] .portfolio-modal__body {
+  background: #050810;
+}
+
+.iframe-wrapper {
+  width: 100%;
+  height: 100%;
+  transition: width 0.4s var(--ease), box-shadow 0.4s;
+  background: white;
+  position: relative;
+  z-index: 2;
+}
+
+.iframe-wrapper--mobile {
+  width: 375px;
+  /* Standard mobile width */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  height: calc(100% - 4rem);
+  border-radius: 20px;
+  box-shadow: 0 0 0 10px #1a1a1a, 0 20px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+/* Mobile wrapper overrides for light mode */
+html[data-theme="light"] .iframe-wrapper--mobile {
+  box-shadow: 0 0 0 10px #e0e0e0, 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+iframe#portfolio-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+/* Hide scrollbar trick for mobile view */
+.iframe-wrapper--mobile iframe#portfolio-iframe {
+  width: calc(100% + 18px);
+  /* Push scrollbar out of view */
+  padding-right: 18px;
+  /* Compensate for width */
+  overflow-y: scroll;
+}
+
+
+/* Loader */
+.portfolio-loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  color: var(--primary);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top-color: currentColor;
+  animation: spin 1s ease-in-out infinite;
+}
+
+html[data-theme="light"] .spinner {
+  border-color: rgba(0, 0, 0, 0.1);
+  border-top-color: var(--primary);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .portfolio-modal__content {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: 0;
+  }
+
+  .iframe-wrapper--mobile {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Hide device controls on actual mobile devices since it's already mobile */
+  #view-desktop,
+  #view-mobile {
+    display: none;
+  }
+}

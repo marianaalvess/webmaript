@@ -868,25 +868,94 @@
     </div>
   </footer>
 
-  <!-- Cookie Banner -->
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
-    <div class="container cookie-banner__inner">
-      <div class="cookie-banner__content">
-        <h3 class="cookie-banner__title" id="cookie-title" data-i18n="cookies.title">Cookies 🍪</h3>
-        <p class="cookie-banner__text" data-i18n="cookies.text">
-          Utilizamos cookies para melhorar a sua experiência. Ao continuar a navegar, aceita a nossa política de
-          privacidade.
-        </p>
-      </div>
-      <div class="cookie-banner__actions">
-        <button class="btn btn--ghost btn--sm" id="cookie-decline" data-i18n="cookies.decline">Recusar</button>
-        <button class="btn btn--primary btn--sm" id="cookie-accept" data-i18n="cookies.accept">Aceitar</button>
+
+
+  <!-- PORTFOLIO VIRTUAL WINDOW -->
+  <div id="portfolio-modal" class="portfolio-modal" aria-hidden="true">
+    <div class="portfolio-modal__overlay" data-close-portfolio></div>
+    <div class="portfolio-modal__content">
+      <header class="portfolio-modal__header">
+        <div class="portfolio-modal__controls">
+          <button class="btn-icon active" id="view-desktop" aria-label="Vista Desktop" title="Desktop">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </button>
+          <button class="btn-icon" id="view-mobile" aria-label="Vista Mobile" title="Mobile">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="portfolio-modal__actions">
+          <a href="#" target="_blank" rel="noopener" id="portfolio-external-link" class="btn btn--ghost btn--sm">
+            Abrir Externamente <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px;">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+          <button class="btn-icon" data-close-portfolio aria-label="Fechar">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="portfolio-modal__body">
+        <div class="portfolio-loader">
+          <div class="spinner"></div>
+        </div>
+        <div class="iframe-wrapper iframe-wrapper--desktop" id="iframe-wrapper">
+          <iframe src="" frameborder="0" allowfullscreen id="portfolio-iframe"></iframe>
+        </div>
       </div>
     </div>
   </div>
 
   <script src="./script.js?v=3" defer></script>
-  <!-- CHATBOT WIDGET -->
+  <!-- EXIT INTENT POPUP -->
+  <div class="exit-popup" id="exit-popup" aria-hidden="true">
+    <div class="exit-popup__overlay" data-exit-close></div>
+    <div class="exit-popup__card" role="dialog" aria-modal="true" aria-labelledby="exit-title">
+      <button class="exit-popup__close" data-exit-close aria-label="Fechar popup">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="exit-popup__icon">👋</div>
+      <h3 class="exit-popup__title" id="exit-title" data-i18n="exit.title">Espere! Ainda tem dúvidas?</h3>
+      <p class="exit-popup__text" data-i18n="exit.text">
+        Fale connosco antes de ir embora. Estamos online para ajudar.
+      </p>
+
+      <div class="exit-popup__actions">
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/351925928900" target="_blank" rel="noopener" class="btn btn--whatsapp-popup"
+          data-i18n="exit.whatsapp">
+          WhatsApp
+        </a>
+        <!-- Chatbot Trigger Button -->
+        <button class="btn btn--primary" id="exit-chat-btn" data-i18n="exit.chat">
+          Abrir Chat
+        </button>
+      </div>
+    </div>
+  </div>
+
   <div id="chatbot" class="chatbot" data-state="closed">
     <div class="chatbot__window" aria-hidden="true">
       <div class="chatbot__header">
