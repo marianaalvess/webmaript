@@ -63,12 +63,16 @@ html[data-theme="light"] body {
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  /* CRITICAL: Prevent side scroll */
+}
+
+body {
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -4058,7 +4062,17 @@ html[data-theme="dark"] .portfolio-modal__body {
   height: calc(100% - 4rem);
   border-radius: 20px;
   box-shadow: 0 0 0 10px #1a1a1a, 0 20px 40px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
+  /* Ensure scroll on mobile/iOS */
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Hide wrapper scrollbar */
+.iframe-wrapper--mobile::-webkit-scrollbar {
+  display: none;
 }
 
 /* Mobile wrapper overrides for light mode */
