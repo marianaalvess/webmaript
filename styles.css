@@ -1405,21 +1405,21 @@ html[data-theme="light"] .footer {
 /* CHANGED: fix var() typos in transitions */
 /* CHANGED: fix var() typos in transitions */
 .btn {
-  transition: transform .5s var(--ease), box-shadow .5s var(--ease), background .5s var(--ease), border-color .5s var(--ease);
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
 }
 
 .nav__link {
-  transition: color .5s var(--ease), transform .5s var(--ease);
+  transition: color .2s var(--ease), transform .2s var(--ease);
 }
 
 .card,
 .project,
 .quote {
-  transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease);
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
 }
 
 .hero__chip {
-  transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease);
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
 }
 
 /* Scroll reveal: fade-in + slide-up */
@@ -1514,7 +1514,7 @@ html[data-theme="light"] .footer {
     background: color-mix(in srgb, var(--primary) 70%, transparent);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform .5s var(--ease);
+    transition: transform .2s var(--ease);
   }
 
   .header .nav__link:hover {
