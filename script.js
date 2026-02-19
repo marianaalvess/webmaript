@@ -8,7 +8,7 @@
   const $$ = (s, root = document) => Array.from(root.querySelectorAll(s));
 
   const STORAGE = {
-    theme: "webmari.theme",
+    theme: "webmari.theme.v2", // Reboot: force fresh start
     lang: "webmari.lang",
   };
 
