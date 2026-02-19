@@ -4197,3 +4197,57 @@ html[data-theme="light"] .footer__bottom {
   border-top: 1px solid var(--line);
   color: var(--muted);
 }
+
+/* === MOBILE THEME FIXES (HOTFIX) === */
+
+/* 1. Fix "Vamos conversar" card in Light Mode */
+/* Force transparent background so it respects the white body background */
+html[data-theme="light"] #contacto .info-card,
+html[data-theme="light"] .contact__info {
+  background: transparent !important;
+  color: var(--text) !important;
+}
+
+/* Ensure contact buttons are light in light mode */
+html[data-theme="light"] .contact-btn {
+  background: #f8f9fa !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: var(--text) !important;
+}
+
+/* 2. Fix "Sobre nós" section in Dark Mode */
+/* Force transparent background to show dark body */
+html[data-theme="dark"] #sobre {
+  background-color: transparent !important;
+}
+
+html[data-theme="dark"] #sobre .about__grid,
+html[data-theme="dark"] #sobre .about__left,
+html[data-theme="dark"] #sobre .about__right {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--text) !important;
+}
+
+html[data-theme="dark"] #sobre .eyebrow {
+  color: var(--muted) !important;
+}
+
+html[data-theme="dark"] #sobre .about__title {
+  color: var(--text) !important;
+}
+
+html[data-theme="dark"] #sobre .lead {
+  color: var(--muted) !important;
+}
+
+/* 3. Exit Intent Popup Fix (Safety) */
+html[data-theme="light"] .exit-popup__card {
+  background: #ffffff !important;
+  color: var(--text) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html[data-theme="light"] .exit-popup__title {
+  color: #0b1324 !important;
+}
