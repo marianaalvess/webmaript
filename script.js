@@ -50,7 +50,7 @@
 
       let nextSrc = "";
       if (isMobile && mobileLight && mobileDark) {
-        nextSrc = theme === "dark" ? (mobileLight || desktopLight) : (mobileDark || desktopDark);
+        nextSrc = theme === "dark" ? (mobileDark || desktopDark) : (mobileLight || desktopLight);
       } else {
         nextSrc = theme === "dark" ? (desktopDark || desktopLight) : (desktopLight || desktopDark);
       }
@@ -82,14 +82,17 @@
     if (t) t.setAttribute("aria-checked", theme === "dark" ? "true" : "false");
 
     // Re-enable transitions after one paint
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        const el = document.getElementById("no-transition-override");
-        if (el) el.remove();
-        // Swap logo after transitions are re-enabled
-        applyBrandLogoForTheme(theme);
-      });
-    });
+    // Use both rAF and setTimeout for iOS Safari compatibility
+    const reEnable = () => {
+      const el = document.getElementById("no-transition-override");
+      if (el) el.remove();
+      // Swap logo after transitions are re-enabled
+      applyBrandLogoForTheme(theme);
+    };
+    let done = false;
+    const once = () => { if (!done) { done = true; reEnable(); } };
+    requestAnimationFrame(() => requestAnimationFrame(once));
+    setTimeout(once, 50); // iOS Safari fallback
   };
 
   // Listen for resize to update logo if needed

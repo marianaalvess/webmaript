@@ -1,4 +1,4 @@
-Ôªø:root {
+:root {
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
 
@@ -320,7 +320,7 @@ html[data-theme="light"] .header[data-elevated="true"] {
   border-radius: 999px;
   font-weight: 650;
   font-size: .95rem;
-  color: color-mix(in srgb, var(--text) 86%, var, --muted);
+  color: color-mix(in srgb, var(--text) 86%, var(--muted));
 }
 
 .nav__link:hover {
@@ -346,12 +346,12 @@ html[data-theme="light"] .header[data-elevated="true"] {
   border-radius: 999px;
   box-shadow: none;
   cursor: pointer;
-  transition: transform .2s var(--ease), background .2s var, --ease, border-color .2s var, --ease;
+  transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
 }
 
 .icon-btn:hover {
   transform: translateY(-1px);
-  border-color: color-mix(in srgb, var(--primary) 50%, var, --line);
+  border-color: color-mix(in srgb, var(--primary) 50%, var(--line));
 }
 
 .icon-btn:active {
@@ -373,12 +373,12 @@ html[data-theme="light"] .header[data-elevated="true"] {
   border-radius: 999px;
   background: color-mix(in srgb, var(--card) 86%, transparent);
   cursor: pointer;
-  transition: transform .2s var, --ease, border-color .2s var, --ease;
+  transition: transform .2s var(--ease), border-color .2s var(--ease);
 }
 
 .pill:hover {
   transform: translateY(-1px);
-  border-color: color-mix(in srgb, var(--primary) 45%, var, --line);
+  border-color: color-mix(in srgb, var(--primary) 45%, var(--line));
 }
 
 .pill__label {
@@ -469,7 +469,7 @@ html[data-theme="light"] .header[data-elevated="true"] {
   border: 1px solid var(--line);
   background: transparent;
   cursor: pointer;
-  transition: transform .2s var(--ease), box-shadow .2s var, --ease, background .2s var, --ease, border-color .2s var, --ease;
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
   font-weight: 750;
 }
 
@@ -482,7 +482,7 @@ html[data-theme="light"] .header[data-elevated="true"] {
 }
 
 .btn--primary {
-  border-color: color-mix(in srgb, var(--primary) 55%, var, --line);
+  border-color: color-mix(in srgb, var(--primary) 55%, var(--line));
   background: linear-gradient(135deg, var(--primary), var(--primary2));
   color: #061026;
   box-shadow: 0 18px 45px rgba(79, 124, 255, .25);
@@ -571,7 +571,7 @@ html[data-theme="light"] .header[data-elevated="true"] {
 
 .hero__subtitle {
   margin: 0 0 1.4rem;
-  color: color-mix(in srgb, var(--text) 78%, var, --muted);
+  color: color-mix(in srgb, var(--text) 78%, var(--muted));
   max-width: 58ch;
   font-size: 1.04rem;
 }
@@ -591,7 +591,7 @@ html[data-theme="light"] .header[data-elevated="true"] {
 
 .badge {
   font-size: .88rem;
-  color: color-mix(in srgb, var(--text) 76%, var, --muted);
+  color: color-mix(in srgb, var(--text) 76%, var(--muted));
   border: 1px solid var(--line);
   background: color-mix(in srgb, var(--card) 72%, transparent);
   padding: .45rem .65rem;
@@ -744,7 +744,7 @@ main[data-sections="soft"]>.section+.section::before {
   height: 56px;
   pointer-events: none;
 
-  /* subtle fade that ‚Äúseparates‚Äù sections without a visible border */
+  /* subtle fade that ìseparatesî sections without a visible border */
   background: linear-gradient(180deg,
       transparent 0%,
       color-mix(in srgb, var(--text) 6%, transparent) 55%,
@@ -752,7 +752,7 @@ main[data-sections="soft"]>.section+.section::before {
   opacity: .9;
 }
 
-/* 4) Testimonials: don‚Äôt force white section background in light (keeps consistency) */
+/* 4) Testimonials: donít force white section background in light (keeps consistency) */
 html[data-theme="light"] #depoimentos.section--alt {
   background: transparent !important;
 }
@@ -794,7 +794,7 @@ html[data-theme="light"] .card {
   display: grid;
   place-items: center;
   background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 20%, transparent), color-mix(in srgb, var(--primary2) 15%, transparent));
-  border: 1px solid color-mix(in srgb, var(--primary) 30%, var, --line);
+  border: 1px solid color-mix(in srgb, var(--primary) 30%, var(--line));
   margin-bottom: .8rem;
 }
 
@@ -985,7 +985,7 @@ html[data-theme="dark"] .project__tag {
 
 .quote blockquote {
   margin: 0;
-  color: color-mix(in srgb, var(--text) 86%, var, --muted);
+  color: color-mix(in srgb, var(--text) 86%, var(--muted));
   font-weight: 650;
 }
 
@@ -1395,11 +1395,11 @@ html[data-theme="light"] .footer {
   border-radius: 14px;
   border: 1px solid var(--line);
   background: color-mix(in srgb, var(--card) 92%, transparent);
-  color: color-mix(in srgb, var(--text) 82%, var, --muted);
+  color: color-mix(in srgb, var(--text) 82%, var(--muted));
 }
 
 /* =========================================================
-   ANIMATIONS + HOVERS (0.5s, smooth, perf-friendly) ‚Äî PUT LAST
+   ANIMATIONS + HOVERS (0.5s, smooth, perf-friendly) ó PUT LAST
    ========================================================= */
 
 /* CHANGED: fix var() typos in transitions */
@@ -1426,7 +1426,7 @@ html[data-theme="light"] .footer {
 .reveal {
   opacity: 0;
   transform: translate3d(0, 18px, 0);
-  transition: opacity .5s var(--ease), transform .5s var, --ease;
+  transition: opacity .5s var(--ease), transform .5s var(--ease);
   will-change: opacity, transform;
 }
 
@@ -1483,7 +1483,7 @@ html[data-theme="light"] .footer {
   }
 }
 
-/* Hover effects only for real hover pointers (perf + avoids mobile ‚Äústicky hover‚Äù) */
+/* Hover effects only for real hover pointers (perf + avoids mobile ìsticky hoverî) */
 @media (hover: hover) and (pointer: fine) {
   .btn:hover {
     transform: translateY(-2px) scale(1.02);
@@ -1495,7 +1495,7 @@ html[data-theme="light"] .footer {
   .quote:hover {
     transform: translateY(-3px) scale(1.01);
     box-shadow: 0 22px 60px rgba(0, 0, 0, .14);
-    border-color: color-mix(in srgb, var(--primary) 28%, var, --line);
+    border-color: color-mix(in srgb, var(--primary) 28%, var(--line));
   }
 
   /* nav underline: animate using ::after (no layout shift) */
@@ -1529,7 +1529,7 @@ html[data-theme="light"] .footer {
   .hero__chip:hover {
     transform: translateY(-2px);
     box-shadow: 0 16px 40px rgba(0, 0, 0, .12);
-    border-color: color-mix(in srgb, var(--primary) 24%, var, --line);
+    border-color: color-mix(in srgb, var(--primary) 24%, var(--line));
   }
 }
 
@@ -2062,7 +2062,7 @@ html[data-theme="dark"] .chatbot__input {
   margin: 0 0 1.35rem;
   padding: .5rem .9rem;
   border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--primary) 22%, var, --line);
+  border: 1px solid color-mix(in srgb, var(--primary) 22%, var(--line));
   background: color-mix(in srgb, var(--primary) 10%, transparent);
   color: color-mix(in srgb, var(--primary) 92%, var(--text));
   font-weight: 750;
@@ -2114,7 +2114,7 @@ html[data-theme="dark"] .chatbot__input {
   border-radius: 999px;
   border: 1px solid var(--line);
   background: color-mix(in srgb, var(--card) 92%, transparent);
-  color: color-mix(in srgb, var(--text) 84%, var, --muted);
+  color: color-mix(in srgb, var(--text) 84%, var(--muted));
   font-weight: 700;
   font-size: .9rem;
   box-shadow: 0 10px 26px rgba(0, 0, 0, .06);
@@ -2130,7 +2130,7 @@ html[data-theme="dark"] .chatbot__input {
   justify-content: center;
 }
 
-/* Scoped hero button styles to match screenshot WITHOUT touching header "Pedir Or√ßamento" */
+/* Scoped hero button styles to match screenshot WITHOUT touching header "Pedir OrÁamento" */
 .hero__btnPrimary {
   gap: .6rem;
   padding: .85rem 1.25rem;
@@ -2164,7 +2164,7 @@ html[data-theme="dark"] .chatbot__input {
   border: 1px solid var(--line);
   background: color-mix(in srgb, var(--card) 92%, transparent);
   box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
-  transition: transform .2s var(--ease), border-color .2s var, --ease, background .2s var, --ease;
+  transition: transform .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
   position: relative;
   isolation: isolate;
   overflow: visible;
@@ -2353,7 +2353,7 @@ html[data-theme="dark"] .hero__scrollIcon {
   justify-content: space-between;
   padding: 0 14px;
 
-  transition: background .2s var(--ease), transform .2s var, --ease;
+  transition: background .2s var(--ease), transform .2s var(--ease);
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -2903,7 +2903,7 @@ html[data-theme="dark"] .header .theme-switch__icon--moon {
     height: 2px;
     background: currentColor;
     border-radius: 999px;
-    transition: transform .2s var(--ease), top .2s var, --ease, opacity .2s var, --ease;
+    transition: transform .2s var(--ease), top .2s var(--ease), opacity .2s var(--ease);
   }
 
   .nav__toggle .hamburger::before {
@@ -2941,12 +2941,12 @@ html[data-theme="dark"] .header .theme-switch__icon--moon {
 
 .hero--screenshot .hero__pill {
   margin: 0 0 32px;
-  /* Badge ‚Üí Title */
+  /* Badge ? Title */
 }
 
 .hero--screenshot .hero__headline {
   margin: 0 0 32px;
-  /* Title ‚Üí Subtitle */
+  /* Title ? Subtitle */
 }
 
 .hero--screenshot .hero__sub {
@@ -2961,7 +2961,7 @@ html[data-theme="dark"] .header .theme-switch__icon--moon {
 
 .hero--screenshot .hero__chips {
   margin: 40px 0 40px;
-  /* Subtitle ‚Üí Features (top), Features ‚Üí CTAs (bottom) */
+  /* Subtitle ? Features (top), Features ? CTAs (bottom) */
   gap: 12px;
   /* Gap between feature badges */
 }
@@ -2971,7 +2971,7 @@ html[data-theme="dark"] .header .theme-switch__icon--moon {
   /* Gap between CTA buttons */
 }
 
-/* Mobile (‚â§860px) */
+/* Mobile (=860px) */
 @media (max-width: 860px) {
   .hero.hero--screenshot {
     padding: 80px 0 60px;
@@ -2986,7 +2986,7 @@ html[data-theme="dark"] .header .theme-switch__icon--moon {
   }
 }
 
-/* === SOBRE N√ìS (screenshot layout) === */
+/* === SOBRE N”S (screenshot layout) === */
 #sobre .about__grid {
   display: grid;
   grid-template-columns: 1.05fr .95fr;
@@ -3051,12 +3051,12 @@ html[data-theme="dark"] .header .theme-switch__icon--moon {
 
 @media (hover: hover) and (pointer: fine) {
   #sobre .about__pill {
-    transition: transform .18s var(--ease), box-shadow .18s var, --ease, border-color .18s var, --ease;
+    transition: transform .18s var(--ease), box-shadow .18s var(--ease), border-color .18s var(--ease);
   }
 
   #sobre .about__pill:hover {
     transform: translateY(-2px);
-    border-color: color-mix(in srgb, var(--primary) 24%, var, --line);
+    border-color: color-mix(in srgb, var(--primary) 24%, var(--line));
     box-shadow: 0 18px 46px rgba(0, 0, 0, .10);
   }
 }
@@ -3086,7 +3086,7 @@ html[data-theme="dark"] .header .theme-switch__icon--moon {
 
 #sobre .about__statLabel {
   font-weight: 650;
-  color: color-mix(in srgb, var(--text) 62%, var, --muted);
+  color: color-mix(in srgb, var(--text) 62%, var(--muted));
 }
 
 /* NEW: Ensure About Us cards have proper spacing on desktop */
@@ -3191,7 +3191,7 @@ html[data-theme="dark"] .header .theme-switch__icon--moon {
   content: none !important;
 }
 
-/* Desktop link layout (match ‚ÄúFAQs‚Äù look for ALL links) */
+/* Desktop link layout (match ìFAQsî look for ALL links) */
 @media (min-width: 861px) {
   .header .nav__capsule {
     display: flex !important;
@@ -3211,8 +3211,8 @@ html[data-theme="dark"] .header .theme-switch__icon--moon {
 
     font-weight: 650;
     font-size: .95rem;
-    color: color-mix(in srgb, var(--text) 78%, var, --muted);
-    transition: color .2s var(--ease), transform .2s var, --ease;
+    color: color-mix(in srgb, var(--text) 78%, var(--muted));
+    transition: color .2s var(--ease), transform .2s var(--ease);
   }
 
   .header .nav__link::after {
@@ -3280,7 +3280,7 @@ html[data-theme="dark"] .header .theme-switch__icon--moon {
   box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
 
   transform: none;
-  transition: transform .18s var(--ease), box-shadow .18s var, --ease, border-color .18s var, --ease;
+  transition: transform .18s var(--ease), box-shadow .18s var(--ease), border-color .18s var(--ease);
 
   /* icon color */
   color: #0b1324;
@@ -3293,7 +3293,7 @@ html[data-theme="dark"] .hero__scroll {
 
 .hero__scroll:hover {
   transform: translateY(-1px);
-  border-color: color-mix(in srgb, var(--primary) 28%, var, --line);
+  border-color: color-mix(in srgb, var(--primary) 28%, var(--line));
   box-shadow: 0 14px 34px rgba(0, 0, 0, .12);
 }
 
@@ -3466,7 +3466,7 @@ html[data-theme="light"] #depoimentos.section--alt {
   margin: 0;
   font-weight: 500;
   line-height: 1.55;
-  color: color-mix(in srgb, var(--text) 70%, var, --muted);
+  color: color-mix(in srgb, var(--text) 70%, var(--muted));
 }
 
 /* author name */
@@ -3561,7 +3561,7 @@ html[data-theme="light"] #depoimentos.section--alt {
   }
 }
 
-/* === SERVI√áOS: CARDS EXACTLY LIKE SCREENSHOT (PUT AT VERY END) === */
+/* === SERVI«OS: CARDS EXACTLY LIKE SCREENSHOT (PUT AT VERY END) === */
 #servicos .services__grid {
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
@@ -4215,7 +4215,7 @@ html[data-theme="light"] .contact-btn {
   color: var(--text) !important;
 }
 
-/* 2. Fix "Sobre n√≥s" section in Dark Mode */
+/* 2. Fix "Sobre nÛs" section in Dark Mode */
 /* Force transparent background to show dark body */
 html[data-theme="dark"] #sobre {
   background-color: transparent !important;
