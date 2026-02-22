@@ -1,4 +1,4 @@
-Ôªø(() => {
+(() => {
   // alert("Flow: Start"); // Removed debug
   window.onerror = function (msg, url, line) {
     console.error("Global Error: " + msg + " at " + line);
@@ -26,7 +26,7 @@
       // Get current message based on active language
       const lang = document.documentElement.lang || "pt";
       const currentLangData = i18n[lang] || i18n["pt"];
-      const msg = currentLangData["contact.whatsapp_msg"] || "Ol√°! Vim atrav√©s do site.";
+      const msg = currentLangData["contact.whatsapp_msg"] || "Ol·! Vim atravÈs do site.";
 
       // Phone number
       const phone = "351925928900";
@@ -56,7 +56,7 @@
       }
 
       if (nextSrc && img.getAttribute("src") !== nextSrc) {
-        // Fade out ‚Üí swap src ‚Üí fade in to avoid flash
+        // Fade out ? swap src ? fade in to avoid flash
         img.style.transition = "opacity 0.15s ease";
         img.style.opacity = "0";
         setTimeout(() => {
@@ -67,32 +67,69 @@
     });
   };
 
-  // Theme
-  const applyTheme = (theme) => {
-    // Suppress all CSS transitions briefly to avoid color flash
-    const style = document.createElement("style");
-    style.id = "no-transition-override";
-    style.textContent = "*, *::before, *::after { transition: none !important; }";
-    document.head.appendChild(style);
+  // Theme ó iOS-safe overlay transition
+  let _themeOverlay = null;
+  const _getOverlay = () => {
+    if (!_themeOverlay) {
+      _themeOverlay = document.createElement("div");
+      _themeOverlay.className = "theme-transition-overlay";
+      _themeOverlay.setAttribute("aria-hidden", "true");
+      document.body.appendChild(_themeOverlay);
+    }
+    return _themeOverlay;
+  };
 
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem(STORAGE.theme, theme);
+  const applyTheme = (theme, instant = false) => {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute("data-theme") || "light";
+    const isChange = currentTheme !== theme;
 
-    const t = $("[data-theme-toggle]");
-    if (t) t.setAttribute("aria-checked", theme === "dark" ? "true" : "false");
-
-    // Re-enable transitions after one paint
-    // Use both rAF and setTimeout for iOS Safari compatibility
-    const reEnable = () => {
-      const el = document.getElementById("no-transition-override");
-      if (el) el.remove();
-      // Swap logo after transitions are re-enabled
+    // If instant (page load) or not actually changing, skip overlay
+    if (instant || !isChange) {
+      html.classList.add("theme-switching");
+      html.setAttribute("data-theme", theme);
+      localStorage.setItem(STORAGE.theme, theme);
+      const t = $("[data-theme-toggle]");
+      if (t) t.setAttribute("aria-checked", theme === "dark" ? "true" : "false");
       applyBrandLogoForTheme(theme);
-    };
-    let done = false;
-    const once = () => { if (!done) { done = true; reEnable(); } };
-    requestAnimationFrame(() => requestAnimationFrame(once));
-    setTimeout(once, 50); // iOS Safari fallback
+      // Remove suppression class after paint
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => html.classList.remove("theme-switching"));
+      });
+      return;
+    }
+
+    // Interactive switch: use overlay to hide the flash
+    const overlay = _getOverlay();
+    // Set overlay color to the TARGET theme background
+    overlay.style.background = theme === "dark" ? "#0b1020" : "#ffffff";
+
+    // 1. Fade overlay IN (covers viewport)
+    overlay.classList.add("is-active");
+
+    // 2. After overlay is opaque, swap theme behind it
+    setTimeout(() => {
+      html.classList.add("theme-switching");
+      html.setAttribute("data-theme", theme);
+      localStorage.setItem(STORAGE.theme, theme);
+
+      const t = $("[data-theme-toggle]");
+      if (t) t.setAttribute("aria-checked", theme === "dark" ? "true" : "false");
+
+      applyBrandLogoForTheme(theme);
+
+      // 3. Let browser paint the new theme behind overlay
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          // Additional safety delay for iOS Safari compositing
+          setTimeout(() => {
+            html.classList.remove("theme-switching");
+            // 4. Fade overlay OUT (reveals new theme)
+            overlay.classList.remove("is-active");
+          }, 60);
+        });
+      });
+    }, 320); // Wait for overlay fade-in (matches .3s CSS transition)
   };
 
   // Listen for resize to update logo if needed
@@ -297,7 +334,7 @@
 
       el.querySelector(".debug-overlay__msg").textContent =
         `${message}\n\n` +
-        `Nota: HTTP 500 √© erro do servidor. Verifique o Network/Logs para o request que falhou.`;
+        `Nota: HTTP 500 È erro do servidor. Verifique o Network/Logs para o request que falhou.`;
 
       document.body.appendChild(el);
     };
@@ -329,7 +366,7 @@
   };
 
   // Init
-  applyTheme(getInitialTheme());
+  applyTheme(getInitialTheme(), true);
   applyLang(getInitialLang());
 
   // ADD: diagnostics overlay (only activates on errors)
@@ -790,12 +827,12 @@
         document.querySelector("#portfolio")?.scrollIntoView({ behavior: "smooth" });
         closeNav();
       } else if (action === "whatsapp_support") {
-        window.open(`https://wa.me/${phone}?text=${encodeURIComponent("Ol√°, preciso de suporte t√©cnico.")}`, "_blank");
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent("Ol·, preciso de suporte tÈcnico.")}`, "_blank");
       } else if (action === "whatsapp_general") {
         window.open(`https://wa.me/${phone}`, "_blank");
       } else if (action === "whatsapp_budget") {
         // Low budget
-        window.open(`https://wa.me/${phone}?text=${encodeURIComponent("Ol√°, tenho um or√ßamento reduzido (<400‚Ç¨) mas gostaria de conversar.")}`, "_blank");
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent("Ol·, tenho um orÁamento reduzido (<400Ä) mas gostaria de conversar.")}`, "_blank");
       } else if (action === "whatsapp_budget_send") {
         // Compile history
         // history = [{ key: "Nome", value: "..." }, {key: "Tipo", ...} ...]
@@ -889,7 +926,7 @@
   }
   // initChatbot(); // Moved to end
 
-  // NOTE: servi√ßos (#servicos) layout is controlled via CSS (.services__grid) to match screenshot.
+  // NOTE: serviÁos (#servicos) layout is controlled via CSS (.services__grid) to match screenshot.
 
   // --- PORTFOLIO VIRTUAL WINDOW LOGIC ---
   const initPortfolioModal = () => {
@@ -1064,83 +1101,6 @@
     }
   };
 
-  // --- THEME ---
-  const initTheme = () => {
-    const toggleBtn = $("[data-theme-toggle]");
-    const toggles = $$("[data-theme-toggle]");
-
-    const html = document.documentElement;
-    const themeKey = STORAGE.theme;
-
-    // Get stored or default
-    let currentTheme = localStorage.getItem(themeKey) || "light";
-    let prevIsMobile = window.innerWidth <= 768;
-
-    // Logo switcher logic
-    const updateLogos = (theme, force = false) => {
-      const isMobile = window.innerWidth <= 768;
-
-      // If not forced (theme change) AND layout stricture hasn't changed, DO NOTHING.
-      // This prevents scroll-induced resize events on mobile from touching DOM.
-      if (!force && isMobile === prevIsMobile) return;
-
-      prevIsMobile = isMobile;
-
-      const logos = $$("img[data-logo-light]");
-
-      logos.forEach(img => {
-        const lightSrc = isMobile
-          ? (img.getAttribute("data-logo-mobile-light") || img.getAttribute("data-logo-light"))
-          : img.getAttribute("data-logo-light");
-
-        const darkSrc = isMobile
-          ? (img.getAttribute("data-logo-mobile-dark") || img.getAttribute("data-logo-dark"))
-          : img.getAttribute("data-logo-dark");
-
-        if (lightSrc && darkSrc) {
-          const newSrc = theme === "light" ? lightSrc : darkSrc;
-          // Attribute check for extra safety
-          if (img.getAttribute("src") !== newSrc) {
-            img.setAttribute("src", newSrc);
-          }
-        }
-      });
-    };
-
-    // Updates UI
-    const applyTheme = (t) => {
-      html.setAttribute("data-theme", t);
-      localStorage.setItem(themeKey, t);
-
-      toggles.forEach(btn => {
-        btn.setAttribute("aria-checked", t === "dark" ? "true" : "false");
-      });
-
-      updateLogos(t, true); // Force update on theme change
-    };
-
-    // Debounced resize listener
-    let resizeTimer;
-    window.addEventListener("resize", () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        updateLogos(currentTheme, false); // Not forced, respects isMobile check
-      }, 100);
-    });
-
-    // Initial apply
-    applyTheme(currentTheme);
-
-    // Toggle event
-    toggles.forEach(btn => {
-      btn.addEventListener("click", () => {
-        currentTheme = currentTheme === "light" ? "dark" : "light";
-        applyTheme(currentTheme);
-      });
-    });
-  };
-
-  initTheme();
   initExitIntent();
   try {
     console.log("Initializing Chatbot...");

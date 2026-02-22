@@ -4251,3 +4251,46 @@ html[data-theme="light"] .exit-popup__card {
 html[data-theme="light"] .exit-popup__title {
   color: #0b1324 !important;
 }
+/* === iOS-SAFE THEME TRANSITION OVERLAY === */
+.theme-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s ease;
+  -webkit-transition: opacity .3s ease;
+}
+.theme-transition-overlay.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Suppress transitions during theme swap (applied via JS class) */
+html.theme-switching,
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition-duration: 0s !important;
+  -webkit-transition-duration: 0s !important;
+  animation-duration: 0s !important;
+  -webkit-animation-duration: 0s !important;
+}
+
+/* Smooth body::before fog opacity for theme transitions */
+body::before {
+  -webkit-transition: opacity .4s ease, filter .4s ease;
+  transition: opacity .4s ease, filter .4s ease;
+}
+
+/* Force GPU compositing on theme-sensitive layers for iOS */
+.header,
+.card,
+.hero__card,
+.section--alt > .container,
+.footer {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
