@@ -4252,65 +4252,21 @@ html[data-theme="light"] .exit-popup__title {
   color: #0b1324 !important;
 }
 
-/* === SMOOTH THEME TRANSITION (iOS/Safari safe) === */
-
-/* Base transition for all theme-sensitive properties */
-body,
-.header,
-.card,
-.hero__card,
-.kpi,
-.section--alt > .container,
-.footer,
-.footer__bottom,
-.form,
-.nav__panel,
-.nav__link,
-.icon-btn,
-.pill,
-.btn,
-.badge,
-.preview__top,
-.skip-link,
-.chatbot__window,
-.chatbot__header,
-.msg--bot,
-.chatbot__input,
-.menu,
-.menu__item,
-.contact-btn,
-.exit-popup__card {
-  transition:
-    background-color .35s ease,
-    color .35s ease,
-    border-color .35s ease,
-    box-shadow .35s ease;
-  -webkit-transition:
-    background-color .35s ease,
-    color .35s ease,
-    border-color .35s ease,
-    box-shadow .35s ease;
+/* === iOS-SAFE THEME COLORS === */
+/* Ensure body always uses the correct theme background via CSS (not inline styles) */
+body {
+  background-color: var(--bg);
 }
 
-/* Fog pseudo-element smooth transition */
+/* Smooth fog transition between themes */
 body::before {
-  -webkit-transition: opacity .4s ease, filter .4s ease;
-  transition: opacity .4s ease, filter .4s ease;
+  -webkit-transition: opacity .5s ease, filter .5s ease;
+  transition: opacity .5s ease, filter .5s ease;
+  will-change: opacity;
 }
 
-/* Theme switch thumb always transitions */
-.theme-switch__thumb {
-  -webkit-transition: transform .25s var(--ease);
-  transition: transform .25s var(--ease);
-}
-
-/* Force GPU compositing on critical layers for iOS Safari */
+/* GPU layer promotion for backdrop-filter elements (prevents iOS flicker) */
 .header {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-}
-
-body::before {
-  -webkit-transform: translate(-50%, -50%);
-  will-change: opacity;
 }
