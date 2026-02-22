@@ -545,6 +545,7 @@ html[data-theme="light"] .header[data-elevated="true"] {
   line-height: 1.1;
   letter-spacing: -0.03em;
   font-weight: 700;
+  color: var(--text);
 }
 
 .typing-cursor::after {
@@ -4269,4 +4270,113 @@ body::before {
 .header {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+}
+
+/* === FALLBACK FOR BROWSERS WITHOUT color-mix() SUPPORT (iOS <15, older Safari) === */
+@supports not (color: color-mix(in srgb, red 50%, blue)) {
+  /* Force all text to be visible with direct color values */
+  
+  /* Dark mode fallbacks (default) */
+  .hero__headline,
+  .hero__title,
+  .hero__title .block,
+  .hero__title .text-gradient {
+    color: #e9ecff !important;
+  }
+  .hero__pill {
+    color: #7ba0ff !important;
+    border-color: rgba(79, 124, 255, 0.25) !important;
+    background: rgba(79, 124, 255, 0.1) !important;
+  }
+  .hero__subtitle,
+  .hero__sub,
+  .hero__sub p {
+    color: #c8cdf0 !important;
+  }
+  .hero__sub--muted {
+    color: #b6bce9 !important;
+  }
+  .hero__chips .chip {
+    color: #b6bce9 !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  .card {
+    background: #0f1a3a !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  .kpi {
+    background: #0f1a3a !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  .hero__card {
+    background: #0f1a3a !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  .section__eyebrow {
+    color: #4f7cff !important;
+  }
+  .section__title {
+    color: #e9ecff !important;
+  }
+  .section__desc {
+    color: #c8cdf0 !important;
+  }
+  .footer__link,
+  .nav__link {
+    color: #b6bce9 !important;
+  }
+  .btn--outline {
+    color: #e9ecff !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+  }
+  
+  /* Light mode fallbacks */
+  html[data-theme="light"] .hero__headline,
+  html[data-theme="light"] .hero__title,
+  html[data-theme="light"] .hero__title .block,
+  html[data-theme="light"] .hero__title .text-gradient {
+    color: #0b1324 !important;
+  }
+  html[data-theme="light"] .hero__pill {
+    color: #3b64d9 !important;
+    border-color: rgba(79, 124, 255, 0.2) !important;
+    background: rgba(79, 124, 255, 0.08) !important;
+  }
+  html[data-theme="light"] .hero__subtitle,
+  html[data-theme="light"] .hero__sub,
+  html[data-theme="light"] .hero__sub p {
+    color: #1e2a4a !important;
+  }
+  html[data-theme="light"] .hero__sub--muted {
+    color: #4a587a !important;
+  }
+  html[data-theme="light"] .hero__chips .chip {
+    color: #4a587a !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+  }
+  html[data-theme="light"] .card {
+    background: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+  }
+  html[data-theme="light"] .kpi {
+    background: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+  }
+  html[data-theme="light"] .section__eyebrow {
+    color: #3b64d9 !important;
+  }
+  html[data-theme="light"] .section__title {
+    color: #0b1324 !important;
+  }
+  html[data-theme="light"] .section__desc {
+    color: #1e2a4a !important;
+  }
+  html[data-theme="light"] .footer__link,
+  html[data-theme="light"] .nav__link {
+    color: #4a587a !important;
+  }
+  html[data-theme="light"] .btn--outline {
+    color: #0b1324 !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+  }
 }
