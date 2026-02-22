@@ -1,4 +1,4 @@
-:root {
+ï»¿:root {
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
 
@@ -744,7 +744,7 @@ main[data-sections="soft"]>.section+.section::before {
   height: 56px;
   pointer-events: none;
 
-  /* subtle fade that “separates” sections without a visible border */
+  /* subtle fade that ï¿½separatesï¿½ sections without a visible border */
   background: linear-gradient(180deg,
       transparent 0%,
       color-mix(in srgb, var(--text) 6%, transparent) 55%,
@@ -752,7 +752,7 @@ main[data-sections="soft"]>.section+.section::before {
   opacity: .9;
 }
 
-/* 4) Testimonials: don’t force white section background in light (keeps consistency) */
+/* 4) Testimonials: donï¿½t force white section background in light (keeps consistency) */
 html[data-theme="light"] #depoimentos.section--alt {
   background: transparent !important;
 }
@@ -1399,7 +1399,7 @@ html[data-theme="light"] .footer {
 }
 
 /* =========================================================
-   ANIMATIONS + HOVERS (0.5s, smooth, perf-friendly) — PUT LAST
+   ANIMATIONS + HOVERS (0.5s, smooth, perf-friendly) ï¿½ PUT LAST
    ========================================================= */
 
 /* CHANGED: fix var() typos in transitions */
@@ -1483,7 +1483,7 @@ html[data-theme="light"] .footer {
   }
 }
 
-/* Hover effects only for real hover pointers (perf + avoids mobile “sticky hover”) */
+/* Hover effects only for real hover pointers (perf + avoids mobile ï¿½sticky hoverï¿½) */
 @media (hover: hover) and (pointer: fine) {
   .btn:hover {
     transform: translateY(-2px) scale(1.02);
@@ -2130,7 +2130,7 @@ html[data-theme="dark"] .chatbot__input {
   justify-content: center;
 }
 
-/* Scoped hero button styles to match screenshot WITHOUT touching header "Pedir Orçamento" */
+/* Scoped hero button styles to match screenshot WITHOUT touching header "Pedir Orï¿½amento" */
 .hero__btnPrimary {
   gap: .6rem;
   padding: .85rem 1.25rem;
@@ -2986,7 +2986,7 @@ html[data-theme="dark"] .header .theme-switch__icon--moon {
   }
 }
 
-/* === SOBRE NÓS (screenshot layout) === */
+/* === SOBRE Nï¿½S (screenshot layout) === */
 #sobre .about__grid {
   display: grid;
   grid-template-columns: 1.05fr .95fr;
@@ -3191,7 +3191,7 @@ html[data-theme="dark"] .header .theme-switch__icon--moon {
   content: none !important;
 }
 
-/* Desktop link layout (match “FAQs” look for ALL links) */
+/* Desktop link layout (match ï¿½FAQsï¿½ look for ALL links) */
 @media (min-width: 861px) {
   .header .nav__capsule {
     display: flex !important;
@@ -3561,7 +3561,7 @@ html[data-theme="light"] #depoimentos.section--alt {
   }
 }
 
-/* === SERVIÇOS: CARDS EXACTLY LIKE SCREENSHOT (PUT AT VERY END) === */
+/* === SERVIï¿½OS: CARDS EXACTLY LIKE SCREENSHOT (PUT AT VERY END) === */
 #servicos .services__grid {
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
@@ -4215,7 +4215,7 @@ html[data-theme="light"] .contact-btn {
   color: var(--text) !important;
 }
 
-/* 2. Fix "Sobre nós" section in Dark Mode */
+/* 2. Fix "Sobre nï¿½s" section in Dark Mode */
 /* Force transparent background to show dark body */
 html[data-theme="dark"] #sobre {
   background-color: transparent !important;
@@ -4251,46 +4251,66 @@ html[data-theme="light"] .exit-popup__card {
 html[data-theme="light"] .exit-popup__title {
   color: #0b1324 !important;
 }
-/* === iOS-SAFE THEME TRANSITION OVERLAY === */
-.theme-transition-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity .3s ease;
-  -webkit-transition: opacity .3s ease;
-}
-.theme-transition-overlay.is-active {
-  opacity: 1;
-  pointer-events: auto;
+
+/* === SMOOTH THEME TRANSITION (iOS/Safari safe) === */
+
+/* Base transition for all theme-sensitive properties */
+body,
+.header,
+.card,
+.hero__card,
+.kpi,
+.section--alt > .container,
+.footer,
+.footer__bottom,
+.form,
+.nav__panel,
+.nav__link,
+.icon-btn,
+.pill,
+.btn,
+.badge,
+.preview__top,
+.skip-link,
+.chatbot__window,
+.chatbot__header,
+.msg--bot,
+.chatbot__input,
+.menu,
+.menu__item,
+.contact-btn,
+.exit-popup__card {
+  transition:
+    background-color .35s ease,
+    color .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+  -webkit-transition:
+    background-color .35s ease,
+    color .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
 }
 
-/* Suppress transitions during theme swap (applied via JS class) */
-html.theme-switching,
-html.theme-switching *,
-html.theme-switching *::before,
-html.theme-switching *::after {
-  transition-duration: 0s !important;
-  -webkit-transition-duration: 0s !important;
-  animation-duration: 0s !important;
-  -webkit-animation-duration: 0s !important;
-}
-
-/* Smooth body::before fog opacity for theme transitions */
+/* Fog pseudo-element smooth transition */
 body::before {
   -webkit-transition: opacity .4s ease, filter .4s ease;
   transition: opacity .4s ease, filter .4s ease;
 }
 
-/* Force GPU compositing on theme-sensitive layers for iOS */
-.header,
-.card,
-.hero__card,
-.section--alt > .container,
-.footer {
+/* Theme switch thumb always transitions */
+.theme-switch__thumb {
+  -webkit-transition: transform .25s var(--ease);
+  transition: transform .25s var(--ease);
+}
+
+/* Force GPU compositing on critical layers for iOS Safari */
+.header {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+}
+
+body::before {
+  -webkit-transform: translate(-50%, -50%);
+  will-change: opacity;
 }

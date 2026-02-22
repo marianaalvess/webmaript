@@ -1,4 +1,4 @@
-(() => {
+ï»¿(() => {
   // alert("Flow: Start"); // Removed debug
   window.onerror = function (msg, url, line) {
     console.error("Global Error: " + msg + " at " + line);
@@ -26,7 +26,7 @@
       // Get current message based on active language
       const lang = document.documentElement.lang || "pt";
       const currentLangData = i18n[lang] || i18n["pt"];
-      const msg = currentLangData["contact.whatsapp_msg"] || "Olá! Vim através do site.";
+      const msg = currentLangData["contact.whatsapp_msg"] || "Olï¿½! Vim atravï¿½s do site.";
 
       // Phone number
       const phone = "351925928900";
@@ -67,69 +67,15 @@
     });
   };
 
-  // Theme — iOS-safe overlay transition
-  let _themeOverlay = null;
-  const _getOverlay = () => {
-    if (!_themeOverlay) {
-      _themeOverlay = document.createElement("div");
-      _themeOverlay.className = "theme-transition-overlay";
-      _themeOverlay.setAttribute("aria-hidden", "true");
-      document.body.appendChild(_themeOverlay);
-    }
-    return _themeOverlay;
-  };
+  // Theme â€” simple and iOS-safe
+  const applyTheme = (theme) => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem(STORAGE.theme, theme);
 
-  const applyTheme = (theme, instant = false) => {
-    const html = document.documentElement;
-    const currentTheme = html.getAttribute("data-theme") || "light";
-    const isChange = currentTheme !== theme;
+    const t = $("[data-theme-toggle]");
+    if (t) t.setAttribute("aria-checked", theme === "dark" ? "true" : "false");
 
-    // If instant (page load) or not actually changing, skip overlay
-    if (instant || !isChange) {
-      html.classList.add("theme-switching");
-      html.setAttribute("data-theme", theme);
-      localStorage.setItem(STORAGE.theme, theme);
-      const t = $("[data-theme-toggle]");
-      if (t) t.setAttribute("aria-checked", theme === "dark" ? "true" : "false");
-      applyBrandLogoForTheme(theme);
-      // Remove suppression class after paint
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => html.classList.remove("theme-switching"));
-      });
-      return;
-    }
-
-    // Interactive switch: use overlay to hide the flash
-    const overlay = _getOverlay();
-    // Set overlay color to the TARGET theme background
-    overlay.style.background = theme === "dark" ? "#0b1020" : "#ffffff";
-
-    // 1. Fade overlay IN (covers viewport)
-    overlay.classList.add("is-active");
-
-    // 2. After overlay is opaque, swap theme behind it
-    setTimeout(() => {
-      html.classList.add("theme-switching");
-      html.setAttribute("data-theme", theme);
-      localStorage.setItem(STORAGE.theme, theme);
-
-      const t = $("[data-theme-toggle]");
-      if (t) t.setAttribute("aria-checked", theme === "dark" ? "true" : "false");
-
-      applyBrandLogoForTheme(theme);
-
-      // 3. Let browser paint the new theme behind overlay
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          // Additional safety delay for iOS Safari compositing
-          setTimeout(() => {
-            html.classList.remove("theme-switching");
-            // 4. Fade overlay OUT (reveals new theme)
-            overlay.classList.remove("is-active");
-          }, 60);
-        });
-      });
-    }, 320); // Wait for overlay fade-in (matches .3s CSS transition)
+    applyBrandLogoForTheme(theme);
   };
 
   // Listen for resize to update logo if needed
@@ -334,7 +280,7 @@
 
       el.querySelector(".debug-overlay__msg").textContent =
         `${message}\n\n` +
-        `Nota: HTTP 500 é erro do servidor. Verifique o Network/Logs para o request que falhou.`;
+        `Nota: HTTP 500 ï¿½ erro do servidor. Verifique o Network/Logs para o request que falhou.`;
 
       document.body.appendChild(el);
     };
@@ -366,7 +312,7 @@
   };
 
   // Init
-  applyTheme(getInitialTheme(), true);
+  applyTheme(getInitialTheme());
   applyLang(getInitialLang());
 
   // ADD: diagnostics overlay (only activates on errors)
@@ -827,12 +773,12 @@
         document.querySelector("#portfolio")?.scrollIntoView({ behavior: "smooth" });
         closeNav();
       } else if (action === "whatsapp_support") {
-        window.open(`https://wa.me/${phone}?text=${encodeURIComponent("Olá, preciso de suporte técnico.")}`, "_blank");
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent("Olï¿½, preciso de suporte tï¿½cnico.")}`, "_blank");
       } else if (action === "whatsapp_general") {
         window.open(`https://wa.me/${phone}`, "_blank");
       } else if (action === "whatsapp_budget") {
         // Low budget
-        window.open(`https://wa.me/${phone}?text=${encodeURIComponent("Olá, tenho um orçamento reduzido (<400€) mas gostaria de conversar.")}`, "_blank");
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent("Olï¿½, tenho um orï¿½amento reduzido (<400ï¿½) mas gostaria de conversar.")}`, "_blank");
       } else if (action === "whatsapp_budget_send") {
         // Compile history
         // history = [{ key: "Nome", value: "..." }, {key: "Tipo", ...} ...]
@@ -926,7 +872,7 @@
   }
   // initChatbot(); // Moved to end
 
-  // NOTE: serviços (#servicos) layout is controlled via CSS (.services__grid) to match screenshot.
+  // NOTE: serviï¿½os (#servicos) layout is controlled via CSS (.services__grid) to match screenshot.
 
   // --- PORTFOLIO VIRTUAL WINDOW LOGIC ---
   const initPortfolioModal = () => {
