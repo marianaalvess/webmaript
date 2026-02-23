@@ -50,7 +50,7 @@
 
       let nextSrc = "";
       if (isMobile && mobileLight && mobileDark) {
-        nextSrc = theme === "dark" ? (mobileDark || desktopDark) : (mobileLight || desktopLight);
+        nextSrc = theme === "dark" ? (mobileLight || desktopLight) : (mobileDark || desktopDark);
       } else {
         nextSrc = theme === "dark" ? (desktopDark || desktopLight) : (desktopLight || desktopDark);
       }
