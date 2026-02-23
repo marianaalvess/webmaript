@@ -1655,6 +1655,8 @@ html[data-theme="light"] .footer {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  touch-action: auto;
+  overscroll-behavior: contain;
 
   /* Enter/Exit Animation */
   opacity: 0;
@@ -1763,6 +1765,8 @@ html[data-theme="dark"] .chatbot__close:hover {
 .chatbot__messages {
   flex: 1;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   padding: 16px;
   display: flex;
   flex-direction: column;
