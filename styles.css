@@ -1764,6 +1764,8 @@ html[data-theme="dark"] .chatbot__close:hover {
 /* Messages Area */
 .chatbot__messages {
   flex: 1;
+  min-height: 0;
+  /* Critical for flexbox children to shrink below content size and trigger overflow */
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
