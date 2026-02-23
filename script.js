@@ -72,6 +72,13 @@
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem(STORAGE.theme, theme);
 
+    // iOS Safari Fix: force synchronous layout to flush CSS variable caches
+    // Some elements using color-mix() or gradients might get stuck in the old theme
+    const tempDisplay = document.body.style.display;
+    document.body.style.display = 'none';
+    void document.body.offsetHeight; // force reflow
+    document.body.style.display = tempDisplay;
+
     const t = $("[data-theme-toggle]");
     if (t) t.setAttribute("aria-checked", theme === "dark" ? "true" : "false");
 
