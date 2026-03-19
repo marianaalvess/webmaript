@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
   // alert("Flow: Start"); // Removed debug
   window.onerror = function (msg, url, line) {
     console.error("Global Error: " + msg + " at " + line);
@@ -938,6 +938,7 @@
     // Bind Click Events on Project Cards
     $$(".project").forEach(link => {
       link.addEventListener("click", (e) => {
+        if (link.getAttribute("data-no-iframe") === "true") return; // Bypass if site blocks iframes
         e.preventDefault();
         const url = link.href;
         if (url) openModal(url);
